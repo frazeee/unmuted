@@ -1,0 +1,12 @@
+/* Warning.module.css */
+.warning {
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+  }
+  
+  .warning.show {
+    opacity: 1;
+  }
+  
+
+  
