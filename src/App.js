@@ -9,6 +9,7 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 
 import TypewriterTest from "./Pages/Typewriter";
+import PageFour from "./Pages/PageFour/PageFour";
 
 function App() {
   // Create styles using makeStyles
@@ -33,8 +34,8 @@ function App() {
         {page === 0 && <TitlePage onProceed={handleProceed} />}
         {page === 1 && <AgeConsent onProceed={handleProceed} />}
         {page === 2 && <PageThree onProceed={handleProceed} />}
+        {page === 3 && <PageFour onProceed={handleProceed} />}
 
-        <PageThree />
       </div>
     </ThemeProvider>
   );

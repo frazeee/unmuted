@@ -10,9 +10,11 @@ import {
 } from "@mui/material";
 import "./styles.css"; // Import the external CSS file
 import ArrowForwardSharpIcon from "@mui/icons-material/ArrowForwardSharp";
+import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import Typewriter from "../Typewriter";
+import VolumeUp from "@mui/icons-material/VolumeUp";
 
-const PageThree = () => {
+const PageThree = ({ onProceed }) => {
   const [currentTypography, setCurrentTypography] = useState(0);
   const [userName, setUsername] = useState("");
 
@@ -21,18 +23,19 @@ const PageThree = () => {
   };
 
   const handleNextTypography = () => {
+    if(currentTypography === 7){
+      onProceed();
+    }
     setCurrentTypography(currentTypography + 1);
   };
 
   return (
     <>
-      <Box
-        position="absolute"
-        top={0}
-        right={0}
-        p={2}
-      >
-        <ArrowForwardSharpIcon sx={{ color: "white", width: "50px", height: "50px" }} onClick = {handleNextTypography} />
+      <Box position="absolute" top={0} right={0} p={2}>
+        <ArrowForwardSharpIcon
+          sx={{ color: "white", width: "50px", height: "50px" }}
+          onClick={handleNextTypography}
+        />
       </Box>
 
       <div
@@ -131,7 +134,29 @@ const PageThree = () => {
 
         <div style={{ textAlign: "center" }}>
           {currentTypography === 5 && (
-         <Typewriter text={`${userName}, belongs to this demographic.`} />
+            <Typewriter text={`${userName}, belongs to this demographic.`} />
+          )}
+        </div>
+
+        <div
+          className={currentTypography === 6 ? "fade-in" : "fade-out"}
+          style={{ textAlign: "center" }}
+        >
+          {currentTypography === 6 && (
+            <>
+              <Typography
+                variant="h4"
+                sx={{ fontWeight: "bold", color: "white" }}
+              >
+                Let's uncover {userName}'s story
+              </Typography>
+              <VolumeUp
+                sx={{ color: "white", width: "250px", height: "250px" }}
+              />
+              <Typography variant="h6" sx={{ color: "white" }}>
+                Click to unmute.
+              </Typography>
+            </>
           )}
         </div>
       </div>
