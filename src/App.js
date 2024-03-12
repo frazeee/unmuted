@@ -8,17 +8,17 @@ import { useState } from "react";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 
-import TypewriterTest from "./Pages/Typewriter";
+import TypewriterTest from "./Components/Typewriter";
 import PageFour from "./Pages/PageFour/PageFour";
 
 function App() {
-  // Create styles using makeStyles
-  const theme = createTheme((theme) => ({
-    typo: {
-      flexGrow: 1,
-      textAlign: "center",
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#ffffff", 
+      },
     },
-  }));
+  });
 
   responsiveFontSizes(theme);
 
@@ -28,14 +28,26 @@ function App() {
     setPage((prevPage) => prevPage + 1);
   };
 
+  const [userName, setUsername] = useState("Rachel");
+
+  const handleChangeName = (userName) => {
+    setUsername(userName);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App" style={{}}>
-        {page === 0 && <TitlePage onProceed={handleProceed} />}
+        {/* {page === 0 && <TitlePage onProceed={handleProceed} />}
         {page === 1 && <AgeConsent onProceed={handleProceed} />}
-        {page === 2 && <PageThree onProceed={handleProceed} />}
-        {page === 3 && <PageFour onProceed={handleProceed} />}
-
+        {page === 2 && (
+          <PageThree
+            onProceed={handleProceed}
+            userName={userName}
+            handleChangeName={handleChangeName}
+          />
+        )}
+        {page === 3 && <PageFour onProceed={handleProceed} userName={userName} />} */}
+        <PageFour onProceed={handleProceed} userName={userName} />
       </div>
     </ThemeProvider>
   );

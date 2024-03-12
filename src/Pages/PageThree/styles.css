@@ -1,4 +1,3 @@
-/* styles.css */
 .fade-in {
     animation: fadeInAnimation 1s ease-in-out forwards;
   }
@@ -23,5 +22,17 @@
     to {
       opacity: 0;
     }
+  }
+  
+
+  .typewriter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
   }
   

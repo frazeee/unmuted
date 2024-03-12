@@ -1,38 +1,106 @@
-import React from "react"; // Import React instead of importing all as React
+import React from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Link } from "@mui/material";
 
-const TitlePage = ({onProceed}) => {
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import "./titlePage.css";
+import "../Fonts/fonts.css";
+import backgroundVideo from "../Backgrounds/TitleVideo.mp4";
+
+const TitlePage = ({ onProceed }) => {
   return (
     <div>
-      <Container lg>
-        <Grid item lg={4}>
-          <Box
-            sx={{
-              marginTop: 30,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100vh",
+          objectFit: "cover",
+          zIndex: -1,
+        }}
+      >
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <Container>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            color: "white",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: "0",
+              marginTop: "16px",
+              fontFamily: "Figtree",
             }}
           >
-            <Typography variant="h1" sx={{ fontWeight: "bold" }} color={"white"}>
-              UNMUTED
-            </Typography>
-            <Typography variant="h4" sx={{ mb: 3 }} color={"white"} align="center" >
-            A Story on Women’s Protection and Wellbeing
-            </Typography>
-            <Typography sx={{ mb: 3 }} color={"white"}>
-              Her story is silenced. Will you be the one to unmute it?
-            </Typography>
-            <Grid container justifyContent="center">
-              <Button size="medium" variant="contained" color="primary" onClick={onProceed}>
-                Proceed
-              </Button>
-            </Grid>
+            {" "}
+            <Link href="#" color="inherit" sx={{ marginRight: 3 }}>
+              About the Project
+            </Link>
+            <Link href="#" color="inherit">
+              References
+            </Link>
+          </div>
+
+          <Grid item lg={8}>
+            <Box sx={{ textAlign: "center" }}>
+              <div className="glitch-wrapper">
+                <Typography
+                  variant="h1"
+                  sx={{ fontWeight: "bold" }}
+                  color="white"
+                >
+                  <div className="glitch-wrapper">
+                    <div className="glitch eighties" data-glitch="UNMUTED">
+                      UNMUTED
+                    </div>
+                  </div>
+                </Typography>
+              </div>
+              <Typography
+                variant="h5"
+                color="white"
+                style={{ fontFamily: "Figtree" }}
+              >
+                Her story is silenced.
+              </Typography>
+              <Typography
+                variant="h5"
+                sx={{ mb: 3 }}
+                color="white"
+                style={{ fontFamily: "Figtree" }}
+              >
+                {" "}
+                Will you be the one to unmute it?
+              </Typography>
+            </Box>
+          </Grid>
+          <Box
+            sx={{
+              position: "fixed",
+              bottom: "40px",
+              right: "40px",
+              padding: "10px",
+              cursor: "pointer",
+            }}
+            onClick={onProceed}
+          >
+            <ArrowCircleRightIcon sx={{ fontSize: 82, color: "white", }} />
           </Box>
-        </Grid>
+        </div>
       </Container>
     </div>
   );

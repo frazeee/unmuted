@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Eighties-Regular';
+    src: url('./Eighties-Regular.otf') format('opentype');
+  }
+
+
+.figtree{
+    font-family: "Figtree", sans-serif;
+}
+
+.workSans{
+    font-family: "Work Sans", sans-serif;
+}
+
+.eighties {
+    font-family: 'Eighties-Regular', sans-serif; /* Fallback font for browsers without 'Eighties-Regular' */
+  }
+  

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Typography,
   Paper,
@@ -7,37 +7,71 @@ import {
   Grid,
   SvgIcon,
   Box,
+  Container,
 } from "@mui/material";
-import "./styles.css"; // Import the external CSS file
-import ArrowForwardSharpIcon from "@mui/icons-material/ArrowForwardSharp";
-import VolumeUpIcon from "@mui/icons-material/VolumeUp";
-import Typewriter from "../Typewriter";
-import VolumeUp from "@mui/icons-material/VolumeUp";
+import "./styles.css";
+import "../../Fonts/fonts.css";
 
-const PageThree = ({ onProceed }) => {
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import Typewriter from "../../Components/Typewriter";
+import VolumeUp from "@mui/icons-material/VolumeUp";
+import VolumeOffIcon from "@mui/icons-material/VolumeOff";
+import VOTest from "../../Audio/test.mp3";
+
+import Background from "../../Backgrounds/Slide5-6.mp4";
+import Background2 from "../../Backgrounds/Slide8.mp4"
+import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
+
+const PageThree = ({ onProceed, userName, handleChangeName }) => {
   const [currentTypography, setCurrentTypography] = useState(0);
-  const [userName, setUsername] = useState("");
+  const [isPlaying, setIsPlaying] = useState(0);
+  const audioRef = useRef(null);
+
+  const handlePlay = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   const handleSubmit = (event) => {
     handleNextTypography();
   };
 
   const handleNextTypography = () => {
-    if(currentTypography === 7){
-      onProceed();
-    }
     setCurrentTypography(currentTypography + 1);
   };
 
+  useEffect(() => {
+    if (currentTypography === 7) {
+      onProceed();
+    }
+  }, [currentTypography, onProceed]);
+
+  useEffect(() => {
+    if ([0, 1, 3].includes(currentTypography) && currentTypography !== 2) {
+      const timer = setTimeout(() => {
+        setCurrentTypography((prevTypography) => prevTypography + 1);
+      }, 3000); // Increment after 3 seconds
+
+      return () => clearTimeout(timer); // Clean up the timer
+    }
+  }, [currentTypography]);
+
+  useEffect(() => {
+    if ([4, 5].includes(currentTypography)) {
+      const timer = setTimeout(() => {
+        setCurrentTypography((prevTypography) => prevTypography + 1);
+      }, 9000); // Increment after 5 seconds
+
+      return () => clearTimeout(timer); // Clean up the timer
+    }
+  }, [currentTypography]);
+
   return (
     <>
-      <Box position="absolute" top={0} right={0} p={2}>
-        <ArrowForwardSharpIcon
-          sx={{ color: "white", width: "50px", height: "50px" }}
-          onClick={handleNextTypography}
-        />
-      </Box>
-
       <div
         style={{
           height: "100vh",
@@ -53,7 +87,7 @@ const PageThree = ({ onProceed }) => {
           {currentTypography === 0 && (
             <Typography
               variant="h4"
-              sx={{ fontWeight: "bold", color: "white" }}
+              sx={{ fontFamily: "Work Sans", color: "white" }}
             >
               You are about to follow a young woman to a path of healing.
             </Typography>
@@ -66,75 +100,136 @@ const PageThree = ({ onProceed }) => {
           {currentTypography === 1 && (
             <Typography
               variant="h4"
-              sx={{ fontWeight: "bold", color: "white" }}
+              sx={{ fontFamily: "Work Sans", color: "white" }}
             >
               Let your decisions be her guide.
             </Typography>
           )}
         </div>
-        {currentTypography === 2 && (
-          <>
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-              style={{ height: "100vh" }}
+        {[2, 3].includes(currentTypography) && (
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            style={{
+              height: "100vh",
+              position: "relative",
+            }}
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                zIndex: -1,
+                pointerEvents: "none",
+              }}
             >
-              <Paper
-                sx={{ mt: 48 }}
-                elevation={3}
+              <source src={Background} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            {currentTypography === 2 && (
+              <Container
                 className={currentTypography === 2 ? "fade-in" : "fade-out"}
-                style={{ width: "50%", padding: "20px", textAlign: "center" }}
+                style={{
+                  width: "50%",
+                  padding: "20px",
+                  textAlign: "center",
+                  zIndex: 1,
+                  color: "white",
+                }}
               >
-                <Typography variant="h4" gutterBottom>
+                <Typography
+                  variant="h4"
+                  gutterBottom
+                  sx={{ fontFamily: "Figtree" }}
+                >
                   Here she is.
                 </Typography>
-                <Typography variant="h5" gutterBottom>
+                <Typography
+                  variant="h4"
+                  gutterBottom
+                  sx={{ fontFamily: "Figtree" }}
+                >
                   What's her name?
                 </Typography>
                 <TextField
+                  style={{ backgroundColor: "white", borderRadius: "5px" }}
                   variant="outlined"
                   fullWidth
+                  required
                   margin="normal"
-                  value={userName}
-                  onChange={(e) => setUsername(e.target.value)}
+                  onChange={(e) => handleChangeName(e.target.value)}
                 />
                 <Button
-                  variant="contained"
-                  color="primary"
+                  variant="outlined"
                   onClick={handleSubmit}
-                  style={{ marginTop: "10px", borderRadius: "15px" }}
+                  sx={{
+                    color: "#4CAF50",
+                    borderColor: "white",
+                    "&:hover": {
+                      backgroundColor: "black",
+                      color: "white",
+                      borderColor: "white",
+                    },
+                  }}
+                  style={{
+                    marginTop: "10px",
+                    borderRadius: "15px",
+                    fontFamily: "Figtree",
+                    color: "white",
+                  }}
                 >
-                  Continue
+                  {handleChangeName ? "Continue" : "Name her for me"}
                 </Button>
-              </Paper>
-            </Grid>
-          </>
+              </Container>
+            )}
+
+            {currentTypography === 3 && (
+              <div
+                className={currentTypography === 3 ? "fade-in" : "fade-out"}
+                style={{ textAlign: "center", color: "white", zIndex: 1 }}
+              >
+                <Typography variant="h4" sx={{ fontFamily: "Figtree" }}>
+                  {userName}, what a beautiful name!
+                </Typography>
+              </div>
+            )}
+          </Grid>
         )}
 
         <div
-          className={currentTypography === 3 ? "fade-in" : "fade-out"}
-          style={{ textAlign: "center" }}
+          style={{
+            textAlign: "center",
+          }}
         >
-          {currentTypography === 3 && (
-            <Typography
-              variant="h4"
-              sx={{ fontWeight: "bold", color: "white" }}
-            >
-              {userName}, what a beautiful name!
-            </Typography>
-          )}
-        </div>
-
-        <div style={{ textAlign: "center" }}>
           {currentTypography === 4 && (
-            <Typewriter text="73% of Filipinos are social media users. Gen Z, aged 18 to 24, is the largest segment." />
+            <div
+              className="typewriter-container"
+              style={{
+                backgroundImage: `url(${WhiteGrunge})`,
+              }}
+            >
+              <Typewriter text="73% of Filipinos are social media users. Gen Z, aged 18 to 24, is the largest segment." />
+            </div>
           )}
         </div>
 
         <div style={{ textAlign: "center" }}>
           {currentTypography === 5 && (
-            <Typewriter text={`${userName}, belongs to this demographic.`} />
+            <div
+              className="typewriter-container"
+              style={{
+                backgroundImage: `url(${WhiteGrunge})`,
+              }}
+            >
+              <Typewriter text={`${userName}, belongs to this demographic.`} />
+            </div>
           )}
         </div>
 
@@ -144,21 +239,86 @@ const PageThree = ({ onProceed }) => {
         >
           {currentTypography === 6 && (
             <>
+              <video
+                autoPlay
+                loop
+                muted
+                style={{
+                  position: "absolute",
+                  top:"0",
+                  left:"0",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  zIndex: -1,
+                  pointerEvents: "none",
+                }}
+              >
+                <source src={Background2} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
               <Typography
                 variant="h4"
-                sx={{ fontWeight: "bold", color: "white" }}
+                sx={{ fontFamily: "Work Sans", color: "white" }}
               >
                 Let's uncover {userName}'s story
               </Typography>
-              <VolumeUp
-                sx={{ color: "white", width: "250px", height: "250px" }}
-              />
-              <Typography variant="h6" sx={{ color: "white" }}>
-                Click to unmute.
-              </Typography>
+              <Box>
+                <audio
+                  ref={audioRef}
+                  src={VOTest}
+                  controls={false}
+                  onEnded={() => setIsPlaying(false)}
+                >
+                  {" "}
+                  Your browser does not support the audio element.
+                </audio>
+                {isPlaying && (
+                  <>
+                    <VolumeUp
+                      sx={{ color: "white", width: "250px", height: "250px" }}
+                      onClick={handlePlay}
+                    />
+                    <Typography
+                      variant="h6"
+                      sx={{ color: "white", fontFamily: "Work Sans" }}
+                    >
+                      Click to mute.
+                    </Typography>
+                  </>
+                )}
+                {!isPlaying && (
+                  <>
+                    <VolumeOffIcon
+                      sx={{ color: "white", width: "250px", height: "250px" }}
+                      onClick={handlePlay}
+                    />
+                    <Typography
+                      variant="h6"
+                      sx={{ color: "white", fontFamily: "Work Sans" }}
+                    >
+                      Click to unmute.
+                    </Typography>
+                  </>
+                )}
+              </Box>
             </>
           )}
         </div>
+        {![2, 3].includes(currentTypography) && (
+        <Box
+          sx={{
+            position: "fixed",
+            bottom: "40px",
+            right: "40px",
+            padding: "10px",
+            cursor: "pointer",
+          }}
+          onClick={handleNextTypography}
+        >
+          <ArrowCircleRightIcon sx={{ fontSize: 82, color: "white" }} />
+        </Box>
+      )}
       </div>
     </>
   );
