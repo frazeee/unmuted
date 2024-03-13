@@ -1,38 +1,36 @@
 .fade-in {
-    animation: fadeInAnimation 1s ease-in-out forwards;
-  }
-  
-  .fade-out {
-    animation: fadeOutAnimation 1s ease-in-out forwards;
-  }
-  
-  @keyframes fadeInAnimation {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fadeOutAnimation {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-  
+  animation: fadeInAnimation 1s ease-in-out forwards;
+}
 
-  .typewriter-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100vw;
+.fade-out {
+  animation: fadeOutAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+}

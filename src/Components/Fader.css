@@ -1,0 +1,11 @@
+/* Example */
+.fade-in {
+    opacity: 1;
+    animation: fade-in 2s ease-in-out;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    animation: fade-out 2s ease-in-out;
+  }
+  

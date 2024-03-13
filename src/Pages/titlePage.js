@@ -9,7 +9,7 @@ import "./titlePage.css";
 import "../Fonts/fonts.css";
 import backgroundVideo from "../Backgrounds/TitleVideo.mp4";
 
-const TitlePage = ({ onProceed }) => {
+const TitlePage = ({ onProceed, onPlayPause }) => {
   return (
     <div>
       <video
@@ -96,7 +96,7 @@ const TitlePage = ({ onProceed }) => {
               padding: "10px",
               cursor: "pointer",
             }}
-            onClick={onProceed}
+            onClick={() => { onProceed(); onPlayPause(); }}
           >
             <ArrowCircleRightIcon sx={{ fontSize: 82, color: "white", }} />
           </Box>

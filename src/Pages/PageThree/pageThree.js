@@ -16,15 +16,15 @@ import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import Typewriter from "../../Components/Typewriter";
 import VolumeUp from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
-import VOTest from "../../Audio/test.mp3";
+import VOTest from "../../Audio/BGMusic.mp3";
 
 import Background from "../../Backgrounds/Slide5-6.mp4";
 import Background2 from "../../Backgrounds/Slide8.mp4"
 import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
 
-const PageThree = ({ onProceed, userName, handleChangeName }) => {
+const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
   const [currentTypography, setCurrentTypography] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
   const handlePlay = () => {
@@ -54,7 +54,7 @@ const PageThree = ({ onProceed, userName, handleChangeName }) => {
     if ([0, 1, 3].includes(currentTypography) && currentTypography !== 2) {
       const timer = setTimeout(() => {
         setCurrentTypography((prevTypography) => prevTypography + 1);
-      }, 3000); // Increment after 3 seconds
+      }, 4000); // Increment after 3 seconds
 
       return () => clearTimeout(timer); // Clean up the timer
     }
@@ -185,7 +185,7 @@ const PageThree = ({ onProceed, userName, handleChangeName }) => {
                     color: "white",
                   }}
                 >
-                  {handleChangeName ? "Continue" : "Name her for me"}
+                  Continue
                 </Button>
               </Container>
             )}
@@ -277,7 +277,7 @@ const PageThree = ({ onProceed, userName, handleChangeName }) => {
                   <>
                     <VolumeUp
                       sx={{ color: "white", width: "250px", height: "250px" }}
-                      onClick={handlePlay}
+                      onClick={() => { handlePlay(); onPlayPause(false); }}
                     />
                     <Typography
                       variant="h6"
@@ -291,7 +291,7 @@ const PageThree = ({ onProceed, userName, handleChangeName }) => {
                   <>
                     <VolumeOffIcon
                       sx={{ color: "white", width: "250px", height: "250px" }}
-                      onClick={handlePlay}
+                      onClick={() => { handlePlay(); onPlayPause(false); }}
                     />
                     <Typography
                       variant="h6"
