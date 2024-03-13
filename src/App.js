@@ -66,7 +66,7 @@ function App() {
                 </audio>
     <ThemeProvider theme={theme}>
       <div className="App" style={{}}>
-        {/* {page === 0 && <TitlePage onProceed={handleProceed} onPlayPause={handlePlayPause} />}
+        {page === 0 && <TitlePage onProceed={handleProceed} onPlayPause={handlePlayPause} />}
         {page === 1 && <AgeConsent onProceed={handleProceed} />}
         {page === 2 && (
           <PageThree
@@ -76,8 +76,8 @@ function App() {
             onPlayPause={setIsPlaying} 
           />
         )}
-        {page === 3 && <PageFour onProceed={handleProceed} userName={userName} />} */}
-        <PageFour onProceed={handleProceed} userName={userName} />
+        {page === 3 && <PageFour onProceed={handleProceed} userName={userName} />}
+
       </div>
     </ThemeProvider>
     </>
