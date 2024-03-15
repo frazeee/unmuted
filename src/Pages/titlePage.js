@@ -1,15 +1,28 @@
 import React from "react";
-import Button from "@mui/material/Button";
+import { useState } from "react";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Container, Grid, Link } from "@mui/material";
+import { Container, Fade, Grid, Link } from "@mui/material";
 
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import "./titlePage.css";
 import "../Fonts/fonts.css";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+
 import backgroundVideo from "../Backgrounds/TitleVideo.mp4";
+import Fader from "../Components/Fader";
 
 const TitlePage = ({ onProceed, onPlayPause }) => {
+  const [currentTypography, setCurrentTypography] = useState(0);
+
+  const handleNextTypography = () => {
+    setCurrentTypography((currentTypography) => currentTypography + 1);
+    if (currentTypography + 1 === 2) {
+      onProceed();
+      onPlayPause();
+    }
+  };
+
   return (
     <div>
       <video
@@ -38,56 +51,108 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
             color: "white",
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              top: "0",
-              marginTop: "16px",
-              fontFamily: "Figtree",
-            }}
-          >
-            {" "}
-            <Link href="#" color="inherit" sx={{ marginRight: 3 }}>
-              About the Project
-            </Link>
-            <Link href="#" color="inherit">
-              References
-            </Link>
-          </div>
-
-          <Grid item lg={8}>
-            <Box sx={{ textAlign: "center" }}>
-              <div className="glitch-wrapper">
-                <Typography
-                  variant="h1"
-                  sx={{ fontWeight: "bold" }}
-                  color="white"
-                >
-                  <div className="glitch-wrapper">
-                    <div className="glitch eighties" data-glitch="UNMUTED">
-                      UNMUTED
-                    </div>
-                  </div>
-                </Typography>
+          {currentTypography === 0 && (
+            <>
+              <div
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  marginTop: "16px",
+                  fontFamily: "Figtree",
+                }}
+              >
+                <Link href="#" color="inherit">
+                  About the Project
+                </Link>
+                <Link href="#" color="inherit" sx={{ marginLeft: 3 }}>
+                  References
+                </Link>
               </div>
-              <Typography
-                variant="h5"
-                color="white"
-                style={{ fontFamily: "Figtree" }}
+
+              <Grid item lg={8}>
+                <Box sx={{ textAlign: "center" }}>
+                  <div className="glitch-wrapper">
+                    <Typography
+                      variant="h1"
+                      sx={{ fontWeight: "bold" }}
+                      color="white"
+                    >
+                      <div className="glitch-wrapper">
+                        <div className="glitch eighties" data-glitch="UNMUTED">
+                          UNMUTED
+                        </div>
+                      </div>
+                    </Typography>
+                  </div>
+                  <Typography
+                    variant="h5"
+                    color="white"
+                    style={{ fontFamily: "Figtree" }}
+                  >
+                    Her story is silenced.
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{ mb: 3 }}
+                    color="white"
+                    style={{ fontFamily: "Figtree" }}
+                  >
+                    {" "}
+                    Will you be the one to unmute it?
+                  </Typography>
+                </Box>
+              </Grid>
+            </>
+          )}
+
+          {currentTypography === 1 && (
+            <>
+              <Fader
+                onNextTypography={handleNextTypography}
+                intervalTime={8000}
               >
-                Her story is silenced.
-              </Typography>
-              <Typography
-                variant="h5"
-                sx={{ mb: 3 }}
-                color="white"
-                style={{ fontFamily: "Figtree" }}
-              >
-                {" "}
-                Will you be the one to unmute it?
-              </Typography>
-            </Box>
-          </Grid>
+                <Grid item lg={8}>
+                  <Box sx={{ textAlign: "center" }}>
+                    <Typography
+                      variant="h5"
+                      color="white"
+                      style={{
+                        fontFamily: "Figtree",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      }}
+                    >
+                      This project may contain information that is painful or
+                      difficult to read for some individuals.
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{ mb: 3 }}
+                      color="white"
+                      style={{
+                        fontFamily: "Figtree",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      }}
+                    >
+                      We advise caution and encourage those who may be sensitive
+                      to such content to consider their well-being before
+                      engaging.
+                    </Typography>
+
+                    <Typography
+                      variant="h5"
+                      sx={{ mb: 3 }}
+                      color="white"
+                      style={{ fontFamily: "Figtree" }}
+                    >
+                      Remember, you can exit the journey anytime by clicking the
+                      'x' button.
+                    </Typography>
+                  </Box>
+                </Grid>
+              </Fader>
+            </>
+          )}
+
           <Box
             sx={{
               position: "fixed",
@@ -96,9 +161,11 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
               padding: "10px",
               cursor: "pointer",
             }}
-            onClick={() => { onProceed(); onPlayPause(); }}
+            onClick={() => {
+              handleNextTypography();
+            }}
           >
-            <ArrowCircleRightIcon sx={{ fontSize: 82, color: "white", }} />
+            <ArrowCircleRightIcon sx={{ fontSize: 82, color: "white" }} />
           </Box>
         </div>
       </Container>

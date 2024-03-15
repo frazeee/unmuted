@@ -20,12 +20,10 @@ import Subtitle from "../../Components/Subtitle";
 import Fader from "../../Components/Fader";
 
 const PageFour = ({ userName, onProceed }) => {
-  const [currentTypography, setCurrentTypography] = useState(6);
+  const [currentTypography, setCurrentTypography] = useState(0);
   const [userChoice, setUserChoice] = useState(0);
-  const [choiceRoute, setChoiceRoute] = useState(0);
-  const [showChoiceRoute, setShowChoiceRoute] = useState(false);
-  const [subtitleOpacity, setSubtitleOpacity] = useState(false);
-  const [typographyOpacity, setTypographyOpacity] = useState(false);
+    const [showChoiceRoute, setShowChoiceRoute] = useState(false);
+
 
   const handleNextTypography = () => {
     setCurrentTypography((currentTypography) => currentTypography + 1);
@@ -34,7 +32,11 @@ const PageFour = ({ userName, onProceed }) => {
     }
   };
 
-  console.log(currentTypography);
+  useEffect(() => {
+    if (currentTypography === 13) {
+      onProceed();
+    }
+  }, [currentTypography]);
 
   const handleChoice = (choice) => {
     setCurrentTypography(7);
@@ -346,7 +348,6 @@ These harassments happen frequently."
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
-                      style={{ opacity: typographyOpacity }}
                     >
                       {userName} decides to report the abusive content to the
                       social media platform.
@@ -469,7 +470,6 @@ These harassments happen frequently."
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
-                      style={{ opacity: typographyOpacity }}
                     >
                       {userName} closes the app, pushing aside the urge to
                       report the abusive content. She tries to convince herself

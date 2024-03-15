@@ -9,14 +9,14 @@ import { useRef, useState, useEffect } from "react";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 
-import BackgroundMusic from "./Audio/BGMusic.mp3"
-
+import BackgroundMusic from "./Audio/BGMusic.mp3";
+import PageFive from "./Pages/PageFive/pageFive";
 
 function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#ffffff", 
+        main: "#ffffff",
       },
     },
   });
@@ -33,16 +33,14 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
-
   const handlePlayPause = () => {
-    setIsPlaying(!isPlaying); 
+    setIsPlaying(!isPlaying);
   };
-
 
   useEffect(() => {
     if (isPlaying) {
-      audioRef.current.volume = 0.1
-      audioRef.current.play(); 
+      audioRef.current.volume = 0.1;
+      audioRef.current.play();
     } else {
       audioRef.current.pause(); // Pause audio if isPlaying is false
     }
@@ -54,19 +52,19 @@ function App() {
 
   return (
     <>
-                  <audio
-                  ref={audioRef}
-                  src={BackgroundMusic}
-                  controls={false}
-                  onEnded={() => setIsPlaying(false)}
-                  loop
-                >
-                  {" "}
-                  Your browser does not support the audio element.
-                </audio>
-    <ThemeProvider theme={theme}>
-      <div className="App" style={{}}>
-        {page === 0 && <TitlePage onProceed={handleProceed} onPlayPause={handlePlayPause} />}
+      <audio
+        ref={audioRef}
+        src={BackgroundMusic}
+        controls={false}
+        onEnded={() => setIsPlaying(false)}
+        loop
+      >
+        {" "}
+        Your browser does not support the audio element.
+      </audio>
+      <ThemeProvider theme={theme}>
+        <div className="App" style={{}}>
+          {/* {page === 0 && <TitlePage onProceed={handleProceed} onPlayPause={handlePlayPause} />}
         {page === 1 && <AgeConsent onProceed={handleProceed} />}
         {page === 2 && (
           <PageThree
@@ -77,9 +75,10 @@ function App() {
           />
         )}
         {page === 3 && <PageFour onProceed={handleProceed} userName={userName} />}
-
-      </div>
-    </ThemeProvider>
+        {page === 4 && <PageFive onProceed={handleProceed} userName={userName}/>} */}
+          <PageFive onProceed={handleProceed} userName={userName} />
+        </div>
+      </ThemeProvider>
     </>
   );
 }
