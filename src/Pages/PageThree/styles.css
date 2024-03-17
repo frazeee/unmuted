@@ -24,13 +24,18 @@
   }
 }
 
-.typewriter-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  width: 100vw;
+.image-container {
+  position: relative;
+  width: 100vw; /* Set width to 100 viewport width */
+  height: 100vh; /* Set height to 100 viewport height */
+  overflow: hidden; /* Hide overflowing parts of the image */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Stretch image to fill container width */
+  height: 100%; /* Stretch image to fill container height */
+  object-fit: cover; /* Crop image to cover the container */
 }

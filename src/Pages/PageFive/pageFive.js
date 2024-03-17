@@ -7,18 +7,18 @@ import {
   Grid,
   Snackbar,
   Container,
-  Alert
+  Alert,
 } from "@mui/material";
 
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 import BackgroundVideo from "../../Backgrounds/Slide15.mp4";
-import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
 import Background161A from "../../Backgrounds/16.1A.png";
 import Background161B from "../../Backgrounds/16.1B.png";
 import Background161C from "../../Backgrounds/16.1C.png";
 import Background162A from "../../Backgrounds/16.2A.png";
 import Background162B from "../../Backgrounds/16.2B.png";
+import Statistics4 from "../../Statistics/Statistics-Visualizers-04.png";
 
 import Subtitle from "../../Components/Subtitle";
 import Fader from "../../Components/Fader";
@@ -26,27 +26,7 @@ import Fader from "../../Components/Fader";
 const PageFive = ({ userName, onProceed }) => {
   const [currentTypography, setCurrentTypography] = useState(0);
   const [userChoice, setUserChoice] = useState("");
-  const [choiceRoute, setChoiceRoute] = useState(0);
   const [showChoiceRoute, setShowChoiceRoute] = useState(false);
-
-  const [openSnackbar, setOpenSnackbar] = useState(false);
-
-  const copyLinkToClipboard = () => {
-    const currentURL = window.location.href;
-    navigator.clipboard
-      .writeText(currentURL)
-      .then(() => {
-        console.log("Link copied to clipboard:", currentURL);
-        setOpenSnackbar(true);
-      })
-      .catch((err) => {
-        console.error("Failed to copy link: ", err);
-      });
-  };
-
-  const handleCloseSnackbar = () => {
-    setOpenSnackbar(false);
-  };
 
   const handleNextTypography = () => {
     setCurrentTypography((currentTypography) => currentTypography + 1);
@@ -54,6 +34,12 @@ const PageFive = ({ userName, onProceed }) => {
       setShowChoiceRoute(true);
     }
   };
+
+  useEffect(() => {
+    if (currentTypography === 11) {
+      onProceed();
+    }
+  }, [currentTypography]);
 
   const handleChoice = (choice) => {
     setCurrentTypography(1);
@@ -150,39 +136,20 @@ const PageFive = ({ userName, onProceed }) => {
       )}
 
       {currentTypography === 1 && (
-        <div
-          style={{
-            backgroundImage: `url(${WhiteGrunge})`,
-            backgroundSize: "cover",
-            height: "100vh",
-            width: "100vw",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "black",
-          }}
-        >
-          <div className="fade-in" style={{ textAlign: "center" }}>
-            <Container maxWidth="md">
-              <Typography
-                variant="h4"
-                style={{
-                  backgroundColor: "#e70c1a",
-                  color: "white",
-                  fontWeight: "bold",
-                }}
-                gutterBottom
-              >
-                DID YOU KNOW?
-              </Typography>
-              <Typography variant="h4">
-                Many people cope by pretending it didn't happen, hoping to
-                return to normalcy. However, talking about the incident is an
-                important step for healing.
-              </Typography>
-            </Container>
-          </div>
-        </div>
+        <Fader onNextTypography={handleNextTypography} intervalTime={10000}>
+          <div
+            style={{
+              backgroundImage: `url(${Statistics4})`,
+              backgroundSize: "cover",
+              height: "100vh",
+              width: "100vw",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "black",
+            }}
+          ></div>
+        </Fader>
       )}
 
       {showChoiceRoute && userChoice === "Keep" && (
@@ -357,7 +324,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={100000}
                   >
                     <Subtitle
                       text={`“${userName}:  It's... it's because of my past traumas. I don't know how to deal with it alone anymore.”`}
@@ -371,7 +338,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={100000}
                   >
                     <Subtitle
                       text={`“Hope: ${userName},  I'm so sorry you've been going through this alone. But I'm here for you, always.”`}
@@ -385,7 +352,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={1000000}
                   >
                     <Subtitle
                       text={`“Hope:  You don't have to carry this burden by yourself. Let's figure out a way forward together.”`}
@@ -399,7 +366,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={1000000}
                   >
                     <Subtitle
                       text={`“${userName}:
@@ -415,7 +382,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={1000000}
                   >
                     <Typography
                       variant="h4"
@@ -437,7 +404,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={1000000}
                   >
                     <Subtitle
                       text={`“Hope:
@@ -453,7 +420,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={1000000}
                   >
                     <Subtitle
                       text={`“Hope:
@@ -461,32 +428,6 @@ const PageFive = ({ userName, onProceed }) => {
                       ”`}
                     />
                   </Fader>
-                </Container>
-              </div>
-            )}
-            {currentTypography === 12 && (
-              <div className="fade-in" style={{ textAlign: "center" }}>
-                <Container maxWidth="md">
-                  <Button
-                    onClick={copyLinkToClipboard}
-                    variant="contained"
-                    color="primary"
-                  >
-                    Copy Link
-                  </Button>
-                  <Snackbar
-                    open={openSnackbar}
-                    autoHideDuration={3000}
-                    onClose={handleCloseSnackbar}
-                  >
-                    <Alert
-                      onClose={handleCloseSnackbar}
-                      severity="success"
-                      sx={{ width: "100%" }}
-                    >
-                      Link copied to clipboard!
-                    </Alert>
-                  </Snackbar>
                 </Container>
               </div>
             )}

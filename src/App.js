@@ -3,6 +3,8 @@ import TitlePage from "./Pages/titlePage";
 import AgeConsent from "./Pages/ageConsent/ageConsent";
 import PageThree from "./Pages/PageThree/pageThree";
 import PageFour from "./Pages/PageFour/PageFour";
+import PageFive from "./Pages/PageFive/pageFive";
+import PageSix from "./Pages/pageSix/pageSix";
 
 import { useRef, useState, useEffect } from "react";
 
@@ -10,7 +12,9 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 
 import BackgroundMusic from "./Audio/BGMusic.mp3";
-import PageFive from "./Pages/PageFive/pageFive";
+import PageSeven from "./Pages/PageSeven/pageSeven";
+import PageEight from "./Pages/pageEight/pageEight";
+import EndPage from "./Pages/endpage/endPage";
 
 function App() {
   const theme = createTheme({
@@ -39,7 +43,7 @@ function App() {
 
   useEffect(() => {
     if (isPlaying) {
-      audioRef.current.volume = 0.1;
+      audioRef.current.volume = 0.01;
       audioRef.current.play();
     } else {
       audioRef.current.pause(); // Pause audio if isPlaying is false
@@ -49,6 +53,7 @@ function App() {
   const handleChangeName = (userName) => {
     setUsername(userName);
   };
+
 
   return (
     <>
@@ -64,19 +69,39 @@ function App() {
       </audio>
       <ThemeProvider theme={theme}>
         <div className="App" style={{}}>
-          {/* {page === 0 && <TitlePage onProceed={handleProceed} onPlayPause={handlePlayPause} />}
-        {page === 1 && <AgeConsent onProceed={handleProceed} />}
-        {page === 2 && (
-          <PageThree
-            onProceed={handleProceed}
-            userName={userName}
-            handleChangeName={handleChangeName}
-            onPlayPause={setIsPlaying} 
-          />
-        )}
-        {page === 3 && <PageFour onProceed={handleProceed} userName={userName} />}
-        {page === 4 && <PageFive onProceed={handleProceed} userName={userName}/>} */}
-          <PageFive onProceed={handleProceed} userName={userName} />
+          {page === 0 && (
+            <TitlePage
+              onProceed={handleProceed}
+              onPlayPause={handlePlayPause}
+            />
+          )}
+          {page === 1 && <AgeConsent onProceed={handleProceed} />}
+          {page === 2 && (
+            <PageThree
+              onProceed={handleProceed}
+              userName={userName}
+              handleChangeName={handleChangeName}
+              onPlayPause={setIsPlaying}
+            />
+          )}
+          {page === 3 && (
+            <PageFour onProceed={handleProceed} userName={userName} />
+          )}
+          {page === 4 && (
+            <PageFive onProceed={handleProceed} userName={userName} />
+          )}
+          {page === 5 && (
+            <PageSix onProceed={handleProceed} userName={userName} />
+          )}
+          {page === 6 && (
+            <PageSeven onProceed={handleProceed} userName={userName} />
+          )}
+          {page === 7 && (
+            <PageEight onProceed={handleProceed} userName={userName} />
+          )}
+          {page === 8 && (
+            <EndPage onProceed={handleProceed} userName={userName} />
+          )}
         </div>
       </ThemeProvider>
     </>

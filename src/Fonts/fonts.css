@@ -16,3 +16,6 @@
     font-family: 'Eighties-Regular', sans-serif; /* Fallback font for browsers without 'Eighties-Regular' */
   }
   
+.redHat {
+  font-family: 'Red Hat Display', sans-serif;
+}

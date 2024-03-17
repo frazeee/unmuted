@@ -1,36 +1,40 @@
 import { useEffect, useRef } from "react";
 import Typography from "@mui/material/Typography";
-import { ReactTyped, Typed } from "react-typed";
 import { Container } from "@mui/material";
+import Typed from "typed.js"; // Import Typed from 'typed.js'
 
-
-const Typewriter = ({ text }) => {
+const Typewriter = ({ children }) => {
   const typedElement = useRef(null);
 
   useEffect(() => {
     const typed = new Typed(typedElement.current, {
-      strings: [text],
-      typeSpeed: 45, // Adjust typing speed as desired
-      showCursor: false
+      strings: [children.props.children], // Extract the text from children props
+      typeSpeed: 40, // Adjust typing speed as desired
+      showCursor: false,
     });
 
     // Cleanup function to destroy the Typed instance on unmount
     return () => {
       typed.destroy();
     };
-  }, []);
+  }, [children]); // Add children to dependency array
 
   return (
-    <div>
-      <Container>
-        <Typography
-          variant="h3"
-          ref={typedElement}
-          color={"black"}
-          sx={{fontFamily:"Work Sans", textAlign:"center"}}
-        ></Typography>
-      </Container>
-    </div>
+    <Container>
+      <Typography
+        variant="h4"
+        sx={{ mt: 48 }}
+        ref={typedElement}
+        style={{
+          fontWeight: 500,
+          fontStyle: "italic",
+          color: "#ffee1a",
+          letterSpacing: "0.16em",
+          marginBottom: "16px",
+          textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+        }}
+      />
+    </Container>
   );
 };
 export default Typewriter;

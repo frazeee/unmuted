@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import Typewriter from "../../Components/Typewriter";
-
 import "./styles.css";
 
-import { Typography, Button, Box, Grid, Item, Container } from "@mui/material";
-import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import { Typography, Button, Box, Grid, Container } from "@mui/material";
+
 import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
 import Background from "../../Backgrounds/Slide11-12.png";
 import Background2 from "../../Backgrounds/Slide13.jpg";
@@ -15,15 +12,21 @@ import Background14C from "../../Backgrounds/14.1C.png";
 import Background142A from "../../Backgrounds/14.2A.png";
 import Background142B from "../../Backgrounds/14.2B.png";
 import Background142D from "../../Backgrounds/14.2D.png";
+import Statistics2 from "../../Statistics/Statistics-Visualizers-02.png";
+import Statistics3 from "../../Statistics/Statistics-Visualizers-03.png";
+
+import Avatar1 from "../../Audio/Avatar/AVATAR 1.mp3";
+import Avatar2 from "../../Audio/Avatar/AVATAR 2.mp3";
+import Avatar3 from "../../Audio/Avatar/AVATAR 3.mp3";
 
 import Subtitle from "../../Components/Subtitle";
 import Fader from "../../Components/Fader";
+import Arrow from "../../Components/Arrow.js";
 
 const PageFour = ({ userName, onProceed }) => {
   const [currentTypography, setCurrentTypography] = useState(0);
   const [userChoice, setUserChoice] = useState(0);
-    const [showChoiceRoute, setShowChoiceRoute] = useState(false);
-
+  const [showChoiceRoute, setShowChoiceRoute] = useState(false);
 
   const handleNextTypography = () => {
     setCurrentTypography((currentTypography) => currentTypography + 1);
@@ -31,9 +34,10 @@ const PageFour = ({ userName, onProceed }) => {
       setShowChoiceRoute(true);
     }
   };
+  console.log(currentTypography);
 
   useEffect(() => {
-    if (currentTypography === 13) {
+    if (currentTypography === 14) {
       onProceed();
     }
   }, [currentTypography]);
@@ -60,17 +64,12 @@ const PageFour = ({ userName, onProceed }) => {
         }}
       >
         {currentTypography === 0 && (
-          <div
-            className="typewriter-container"
-            style={{
-              backgroundImage: `url(${WhiteGrunge})`,
-            }}
-          >
-            <Typewriter
-              text="Nearly 7 in 10 girls and young women in the Philippines have experienced harassment on social media.
-These harassments happen frequently."
-            />
-          </div>
+          <Fader onNextTypography={handleNextTypography} intervalTime={70000}>
+            <div className="image-container">
+              {" "}
+              <img src={Statistics2} />
+            </div>
+          </Fader>
         )}
 
         {currentTypography === 1 && (
@@ -80,9 +79,19 @@ These harassments happen frequently."
               backgroundImage: `url(${WhiteGrunge})`,
             }}
           >
-            <Typewriter
-              text={`Sadly, ${userName} is one of them, and her past haunts her.`}
-            />
+            <Fader
+              onNextTypography={handleNextTypography}
+              intervalTime={70000000}
+            >
+              <div>
+                <Typography
+                  variant="h4"
+                  sx={{ fontFamily: "Figtree", fontWeight: "500" }}
+                >
+                  Sadly, {userName} is one of them, and her past haunts her.
+                </Typography>
+              </div>
+            </Fader>
           </div>
         )}
 
@@ -132,7 +141,7 @@ These harassments happen frequently."
             }}
           >
             <div style={{ textAlign: "center" }}>
-              <Container maxWidth="md">
+              <Container maxWidth="lg">
                 {/* First block */}
                 <Typography
                   variant="h4"
@@ -163,11 +172,17 @@ These harassments happen frequently."
               fontFamily: "Figtree",
             }}
           >
-            <div className="fade-in" style={{ textAlign: "center" }}>
-              <Container maxWidth="md">
-                <Subtitle text={`${userName}: “No... not again.”`} />
-              </Container>
-            </div>
+            <Fader
+              onNextTypography={handleNextTypography}
+              intervalTime={5000}
+            >
+              <div className="fade-in" style={{ textAlign: "center" }}>
+                <Container maxWidth="md">
+                  <Subtitle text={`${userName}: “No... not again.”`} />
+                  <audio src={Avatar1} autoPlay loop={false} controls={false} />
+                </Container>
+              </div>
+            </Fader>
           </div>
         )}
 
@@ -240,7 +255,6 @@ These harassments happen frequently."
               </Typography>
               <Grid container spacing={6}>
                 {" "}
-                {/* Add spacing between buttons (optional) */}
                 <Grid item md={12} lg={6}>
                   <Button
                     onClick={() => handleChoice("Deactivate")}
@@ -274,48 +288,24 @@ These harassments happen frequently."
           </div>
         )}
         {currentTypography === 7 && (
-          <div
-            style={{
-              backgroundImage: `url(${WhiteGrunge})`,
-              backgroundSize: "cover",
-              height: "100vh",
-              width: "100vw",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "black",
-            }}
-          >
-            <div className="fade-in" style={{ textAlign: "center" }}>
-              <Container maxWidth="md">
-                <Typography
-                  variant="h4"
-                  style={{
-                    backgroundColor: "#e70c1a",
-                    color: "white",
-                    fontWeight: "bold",
-                  }}
-                  gutterBottom
-                >
-                  DID YOU KNOW?
-                </Typography>
-                <Typography variant="h4">
-                  Research proves that ignoring harassment doesn't stop it.
-                </Typography>
-              </Container>
-            </div>
-          </div>
+          <Fader onNextTypography={handleNextTypography} intervalTime={8000000}>
+       <div className="image-container">
+                {" "}
+                <img src={Statistics3} />
+              </div>
+          </Fader>
         )}
 
         {showChoiceRoute && userChoice === "Report" && (
           <div
             style={{
-              backgroundImage: currentTypography >= 11
-              ? currentTypography === 13
-                ? `url(${Background142D})` // New background for typography 13
-                : `url(${Background142B})` // Background for typography 11 or higher (except 13)
-              : `url(${Background142A})`, // Original background
-            
+              backgroundImage:
+                currentTypography >= 11
+                  ? currentTypography === 13
+                    ? `url(${Background142D})` // New background for typography 13
+                    : `url(${Background142B})` // Background for typography 11 or higher (except 13)
+                  : `url(${Background142A})`, // Original background
+
               backgroundSize: "cover",
               height: "100vh",
               width: "100vw",
@@ -330,17 +320,18 @@ These harassments happen frequently."
                 {currentTypography === 8 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={100000}
                   >
                     <Subtitle
                       text={`${userName}: “It's happening again... I can't let them get away with this.”`}
                     />
+                    <audio src={Avatar3} autoPlay loop={false} controls={false} />
                   </Fader>
                 )}
                 {currentTypography === 9 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={10000000}
                   >
                     <Typography
                       variant="h4"
@@ -357,7 +348,7 @@ These harassments happen frequently."
                 {currentTypography === 10 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={10000000}
                   >
                     <Typography
                       variant="h4"
@@ -374,7 +365,7 @@ These harassments happen frequently."
                 {currentTypography === 11 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={10000000}
                   >
                     <Typography
                       variant="h4"
@@ -392,7 +383,7 @@ These harassments happen frequently."
                 {currentTypography === 12 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={10000000}
                   >
                     <Typography
                       variant="h4"
@@ -411,7 +402,7 @@ These harassments happen frequently."
                 {currentTypography === 13 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={1000000}
+                    intervalTime={100000000}
                   >
                     <Typography
                       variant="h4"
@@ -451,10 +442,16 @@ These harassments happen frequently."
                   <>
                     <Fader
                       onNextTypography={handleNextTypography}
-                      intervalTime={10000}
+                      intervalTime={8000}
                     >
                       <Subtitle
                         text={`${userName}: “I should report this... but what's the point? It won't change anything.”`}
+                      />
+                      <audio
+                        src={Avatar2}
+                        autoPlay
+                        loop={false}
+                        controls={false}
                       />
                     </Fader>
                   </>
@@ -462,7 +459,7 @@ These harassments happen frequently."
                 {currentTypography === 9 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={7000}
+                    intervalTime={70000000}
                   >
                     <Typography
                       variant="h4"
@@ -561,12 +558,7 @@ These harassments happen frequently."
           }}
           onClick={handleNextTypography}
         >
-          <ArrowCircleRightIcon
-            sx={{
-              fontSize: 82,
-              color: [0, 1, 7].includes(currentTypography) ? "black" : "white",
-            }}
-          />
+          <Arrow />
         </Box>
       )}
     </>

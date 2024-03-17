@@ -3,11 +3,11 @@ import { useState } from "react";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Container, Fade, Grid, Link } from "@mui/material";
+import { Container, Grid, Link } from "@mui/material";
 
 import "./titlePage.css";
 import "../Fonts/fonts.css";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import Arrow from "../Components/Arrow.js";
 
 import backgroundVideo from "../Backgrounds/TitleVideo.mp4";
 import Fader from "../Components/Fader";
@@ -59,6 +59,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                   top: "0",
                   marginTop: "16px",
                   fontFamily: "Figtree",
+                  fontWeight: "400",
                 }}
               >
                 <Link href="#" color="inherit">
@@ -74,11 +75,14 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                   <div className="glitch-wrapper">
                     <Typography
                       variant="h1"
-                      sx={{ fontWeight: "bold" }}
+                      sx={{
+                        fontWeight: "bold",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      }}
                       color="white"
                     >
                       <div className="glitch-wrapper">
-                        <div className="glitch eighties" data-glitch="UNMUTED">
+                        <div className="glitch redHat" data-glitch="UNMUTED">
                           UNMUTED
                         </div>
                       </div>
@@ -142,7 +146,10 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                       variant="h5"
                       sx={{ mb: 3 }}
                       color="white"
-                      style={{ fontFamily: "Figtree" }}
+                      style={{
+                        fontFamily: "Figtree",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      }}
                     >
                       Remember, you can exit the journey anytime by clicking the
                       'x' button.
@@ -165,7 +172,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
               handleNextTypography();
             }}
           >
-            <ArrowCircleRightIcon sx={{ fontSize: 82, color: "white" }} />
+            <Arrow />
           </Box>
         </div>
       </Container>
