@@ -228,7 +228,7 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
                     variant="h4"
                     sx={{ fontFamily: "Figtree", fontWeight: "500" }}
                   >
-                    Sadly, {userName} belongs to this demographic.
+                    {userName} belongs to this demographic.
                   </Typography>
                 </div>
               </Fader>

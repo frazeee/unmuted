@@ -273,7 +273,7 @@ const PageFive = ({ userName, onProceed }) => {
           <div
             style={{
               backgroundImage:
-                currentTypography >= 9
+                currentTypography >= 10
                   ? `url(${Background162B})`
                   : `url(${Background162A})`,
               backgroundSize: "cover",
@@ -453,10 +453,10 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={9000}
+                    intervalTime={7000}
                   >
                     <Subtitle
-                      text={`“Hope: ${userName}, you're incredibly brave for opening up like this.”`}
+                      text={`“Hope: You're incredibly brave for opening up like this.”`}
                     />
                     <audio src={Hope4} autoPlay loop={false} controls={false} />
                   </Fader>
@@ -468,7 +468,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={9000}
                   >
                     <Subtitle
                       text={`“Hope: And remember, seeking professional help is a positive step towards healing. You're not alone in this journey, ok?”`}
@@ -482,7 +482,7 @@ const PageFive = ({ userName, onProceed }) => {
         </>
       )}
 
-      {![0, 3].includes(currentTypography) &&
+      {![0, 3, 5].includes(currentTypography) &&
         !(
           userChoice === "Tell" &&
           [4, 5, 6, 7, 8, 9, 11, 12].includes(currentTypography)
