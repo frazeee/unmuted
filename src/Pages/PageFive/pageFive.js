@@ -10,7 +10,7 @@ import {
   Alert,
 } from "@mui/material";
 
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import "./styles.css";
 
 import BackgroundVideo from "../../Backgrounds/Slide15.mp4";
 import Background161A from "../../Backgrounds/16.1A.png";
@@ -20,8 +20,20 @@ import Background162A from "../../Backgrounds/16.2A.png";
 import Background162B from "../../Backgrounds/16.2B.png";
 import Statistics4 from "../../Statistics/Statistics-Visualizers-04.png";
 
+import Avatar4 from "../../Audio/Avatar/AVATAR 4.mp3";
+import Avatar5 from "../../Audio/Avatar/AVATAR 5.mp3";
+import Avatar6 from "../../Audio/Avatar/AVATAR 6.mp3";
+import Avatar7 from "../../Audio/Avatar/AVATAR 7.mp3";
+import Hope1 from "../../Audio/Hope/HOPE 1.mp3";
+import Hope2 from "../../Audio/Hope/HOPE 2.mp3";
+import Hope3 from "../../Audio/Hope/HOPE 3.mp3";
+import Hope4 from "../../Audio/Hope/HOPE 4.mp3";
+import Hope5 from "../../Audio/Hope/HOPE 5.mp3";
+import PhoneRinging from "../../Audio/SFX/Phone Ringing.mp3";
+
 import Subtitle from "../../Components/Subtitle";
 import Fader from "../../Components/Fader";
+import Arrow from "../../Components/Arrow";
 
 const PageFive = ({ userName, onProceed }) => {
   const [currentTypography, setCurrentTypography] = useState(0);
@@ -36,7 +48,7 @@ const PageFive = ({ userName, onProceed }) => {
   };
 
   useEffect(() => {
-    if (currentTypography === 11) {
+    if (currentTypography === 13) {
       onProceed();
     }
   }, [currentTypography]);
@@ -136,19 +148,14 @@ const PageFive = ({ userName, onProceed }) => {
       )}
 
       {currentTypography === 1 && (
-        <Fader onNextTypography={handleNextTypography} intervalTime={10000}>
-          <div
-            style={{
-              backgroundImage: `url(${Statistics4})`,
-              backgroundSize: "cover",
-              height: "100vh",
-              width: "100vw",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "black",
-            }}
-          ></div>
+        <Fader
+          onNextTypography={handleNextTypography}
+          intervalTime={10000000000}
+        >
+          <div className="image-container">
+            {" "}
+            <img src={Statistics4} />
+          </div>
         </Fader>
       )}
 
@@ -176,7 +183,7 @@ const PageFive = ({ userName, onProceed }) => {
                 {currentTypography === 2 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={1000000000}
                   >
                     <Typography
                       variant="h4"
@@ -193,17 +200,23 @@ const PageFive = ({ userName, onProceed }) => {
                 {currentTypography === 3 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={7500}
                   >
                     <Subtitle
                       text={`${userName}: “I can handle this on my own. I don't want to burden anyone with my problems.”`}
+                    />
+                    <audio
+                      src={Avatar4}
+                      autoPlay
+                      loop={false}
+                      controls={false}
                     />
                   </Fader>
                 )}
                 {currentTypography === 4 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={100000000000}
                   >
                     <Typography
                       variant="h4"
@@ -221,7 +234,7 @@ const PageFive = ({ userName, onProceed }) => {
                 {currentTypography === 5 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={1000000}
+                    intervalTime={10000000}
                   >
                     <Typography
                       variant="h4"
@@ -277,7 +290,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={100000000}
                   >
                     <Typography
                       variant="h4"
@@ -298,9 +311,14 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={9000}
                   >
-                    <Subtitle text={`Hope: “Hey ${userName}? What’s up?”`} />
+                    <audio
+                      src={PhoneRinging}
+                      autoPlay
+                      loop={false}
+                      controls={false}
+                    />
                   </Fader>
                 </Container>
               </div>
@@ -310,11 +328,10 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={3000}
                   >
-                    <Subtitle
-                      text={`“${userName}: Hey Hope, I... I've been keeping something from you. I've been struggling mentally, more than I've let on.”`}
-                    />
+                    <Subtitle text={`Hope: “Hey ${userName}? What’s up?”`} />
+                    <audio src={Hope1} autoPlay loop={false} controls={false} />
                   </Fader>
                 </Container>
               </div>
@@ -324,10 +341,16 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={100000}
+                    intervalTime={10000}
                   >
                     <Subtitle
-                      text={`“${userName}:  It's... it's because of my past traumas. I don't know how to deal with it alone anymore.”`}
+                      text={`“${userName}: Hey Hope, I... I've been keeping something from you. I've been struggling mentally, more than I've let on.”`}
+                    />
+                    <audio
+                      src={Avatar5}
+                      autoPlay
+                      loop={false}
+                      controls={false}
                     />
                   </Fader>
                 </Container>
@@ -338,10 +361,16 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={100000}
+                    intervalTime={10000}
                   >
                     <Subtitle
-                      text={`“Hope: ${userName},  I'm so sorry you've been going through this alone. But I'm here for you, always.”`}
+                      text={`“${userName}:  It's... it's because of my past traumas. I don't know how to deal with it alone anymore.”`}
+                    />
+                    <audio
+                      src={Avatar6}
+                      autoPlay
+                      loop={false}
+                      controls={false}
                     />
                   </Fader>
                 </Container>
@@ -352,11 +381,12 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={1000000}
+                    intervalTime={9000}
                   >
                     <Subtitle
-                      text={`“Hope:  You don't have to carry this burden by yourself. Let's figure out a way forward together.”`}
+                      text={`“Hope: ${userName},  I'm so sorry you've been going through this alone. But I'm here for you, always.”`}
                     />
+                    <audio src={Hope2} autoPlay loop={false} controls={false} />
                   </Fader>
                 </Container>
               </div>
@@ -366,18 +396,37 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={1000000}
+                    intervalTime={10000}
                   >
                     <Subtitle
-                      text={`“${userName}:
-                      Thanks, Hope. I just feel so lost. I don't know where to turn or what to do next.
-                      ”`}
+                      text={`“Hope:  You don't have to carry this burden by yourself. Let's figure out a way forward together.”`}
                     />
+                    <audio src={Hope3} autoPlay loop={false} controls={false} />
                   </Fader>
                 </Container>
               </div>
             )}
             {currentTypography === 9 && (
+              <div className="fade-in" style={{ textAlign: "center" }}>
+                <Container maxWidth="md">
+                  <Fader
+                    onNextTypography={handleNextTypography}
+                    intervalTime={9000}
+                  >
+                    <Subtitle
+                      text={`“${userName}: Thanks, Hope. I just feel so lost. I don't know where to turn or what to do next.”`}
+                    />{" "}
+                    <audio
+                      src={Avatar7}
+                      autoPlay
+                      loop={false}
+                      controls={false}
+                    />
+                  </Fader>
+                </Container>
+              </div>
+            )}
+            {currentTypography === 10 && (
               <div className="fade-in" style={{ textAlign: "center" }}>
                 <Container maxWidth="md">
                   <Fader
@@ -399,34 +448,32 @@ const PageFive = ({ userName, onProceed }) => {
                 </Container>
               </div>
             )}
-            {currentTypography === 10 && (
-              <div className="fade-in" style={{ textAlign: "center" }}>
-                <Container maxWidth="md">
-                  <Fader
-                    onNextTypography={handleNextTypography}
-                    intervalTime={1000000}
-                  >
-                    <Subtitle
-                      text={`“Hope:
-                    ${userName}, you're incredibly brave for opening up like this.
-                      ”`}
-                    />
-                  </Fader>
-                </Container>
-              </div>
-            )}
             {currentTypography === 11 && (
               <div className="fade-in" style={{ textAlign: "center" }}>
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={1000000}
+                    intervalTime={9000}
                   >
                     <Subtitle
-                      text={`“Hope:
-                      And remember, seeking professional help is a positive step towards healing. You're not alone in this journey, ok?
-                      ”`}
+                      text={`“Hope: ${userName}, you're incredibly brave for opening up like this.”`}
                     />
+                    <audio src={Hope4} autoPlay loop={false} controls={false} />
+                  </Fader>
+                </Container>
+              </div>
+            )}
+            {currentTypography === 12 && (
+              <div className="fade-in" style={{ textAlign: "center" }}>
+                <Container maxWidth="md">
+                  <Fader
+                    onNextTypography={handleNextTypography}
+                    intervalTime={10000}
+                  >
+                    <Subtitle
+                      text={`“Hope: And remember, seeking professional help is a positive step towards healing. You're not alone in this journey, ok?”`}
+                    />{" "}
+                    <audio src={Hope5} autoPlay loop={false} controls={false} />
                   </Fader>
                 </Container>
               </div>
@@ -435,25 +482,24 @@ const PageFive = ({ userName, onProceed }) => {
         </>
       )}
 
-      {![0].includes(currentTypography) && (
-        <Box
-          sx={{
-            position: "fixed",
-            bottom: "40px",
-            right: "40px",
-            padding: "10px",
-            cursor: "pointer",
-          }}
-          onClick={handleNextTypography}
-        >
-          <ArrowCircleRightIcon
+      {![0, 3].includes(currentTypography) &&
+        !(
+          userChoice === "Tell" &&
+          [4, 5, 6, 7, 8, 9, 11, 12].includes(currentTypography)
+        ) && (
+          <Box
             sx={{
-              fontSize: 82,
-              color: [0, 1].includes(currentTypography) ? "black" : "white",
+              position: "fixed",
+              bottom: "40px",
+              right: "40px",
+              padding: "10px",
+              cursor: "pointer",
             }}
-          />
-        </Box>
-      )}
+            onClick={handleNextTypography}
+          >
+            <Arrow />
+          </Box>
+        )}
     </div>
   );
 };

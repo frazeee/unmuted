@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import { Typography, Button, Box, Grid, Container } from "@mui/material";
 
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import "./styles.css";
+
+import Arrow from "../../Components/Arrow";
 import Background17 from "../../Backgrounds/17.png";
 import Background182A from "../../Backgrounds/18.2A.png";
 import Background182B from "../../Backgrounds/18.2B.png";
@@ -10,11 +12,17 @@ import Background181A from "../../Backgrounds/18.1A.png";
 import Background181C from "../../Backgrounds/18.1C.mp4";
 import Statistics5 from "../../Statistics/Statistics-Visualizers-05.png";
 
+import Avatar8 from "../../Audio/Avatar/AVATAR 8.mp3";
+import Avatar9 from "../../Audio/Avatar/AVATAR 9.mp3";
+import Avatar10 from "../../Audio/Avatar/AVATAR 10.mp3";
+import Avatar11 from "../../Audio/Avatar/AVATAR 11.mp3";
+import Hope6 from "../../Audio/Hope/HOPE 6.mp3";
+
 import Subtitle from "../../Components/Subtitle";
 import Fader from "../../Components/Fader";
 
 const PageSix = ({ userName, onProceed }) => {
-  const [currentTypography, setCurrentTypography] = useState(1);
+  const [currentTypography, setCurrentTypography] = useState(0);
   const [userChoice, setUserChoice] = useState("");
   const [showChoiceRoute, setShowChoiceRoute] = useState(false);
 
@@ -130,18 +138,8 @@ const PageSix = ({ userName, onProceed }) => {
 
       {currentTypography === 1 && (
         <Fader onNextTypography={handleNextTypography} intervalTime={10000000}>
-          <div
-            style={{
-             
-              height: "100vh",
-              width: "100vw",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "black",
-            }}
-          >
-            <img src={Statistics5}/>
+          <div className="image-container">
+            <img src={Statistics5} />
           </div>
         </Fader>
       )}
@@ -185,12 +183,12 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 3 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={8000}
                 >
                   <Subtitle
-                    text={`Hope:
-                    “I'm worried about you. You don't seem like yourself lately.”`}
+                    text={`Hope:“I'm worried about you. You don't seem like yourself lately.”`}
                   />
+                  <audio src={Hope6} autoPlay loop={false} controls={false} />
                 </Fader>
               )}
               {currentTypography === 4 && (
@@ -199,9 +197,9 @@ const PageSix = ({ userName, onProceed }) => {
                   intervalTime={10000}
                 >
                   <Subtitle
-                    text={`${userName}:
-                    “I appreciate your concern, but yeah, there's really nothing to worry about.”`}
-                  />
+                    text={`${userName}: “I appreciate your concern, but yeah, there's really nothing to worry about.”`}
+                  />{" "}
+                  <audio src={Avatar9} autoPlay loop={false} controls={false} />
                 </Fader>
               )}
               {currentTypography === 5 && (
@@ -210,8 +208,13 @@ const PageSix = ({ userName, onProceed }) => {
                   intervalTime={10000}
                 >
                   <Subtitle
-                    text={`${userName}:
-                    “I'll need some time to figure things out, but I’ll find my way back soon enough.”`}
+                    text={`${userName}: “I'll need some time to figure things out, but I’ll find my way back soon enough.”`}
+                  />{" "}
+                  <audio
+                    src={Avatar10}
+                    autoPlay
+                    loop={false}
+                    controls={false}
                   />
                 </Fader>
               )}
@@ -237,11 +240,16 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 7 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={15000}
                 >
                   <Subtitle
-                    text={`${userName}:
-                    “I can't do this anymore. I've been pretending for too long. I need help.”`}
+                    text={`${userName}: “I can't do this anymore. I've been pretending for too long. I need help.”`}
+                  />
+                        <audio
+                    src={Avatar11}
+                    autoPlay
+                    loop={false}
+                    controls={false}
                   />
                 </Fader>
               )}
@@ -391,12 +399,12 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 6 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000000}
+                  intervalTime={10000}
                 >
                   <Subtitle
-                    text={`${userName}:
-“Something doesn't feel right... these feelings, they're creeping back in.”`}
+                    text={`${userName}: “Something doesn't feel right... these feelings, they're creeping back in.”`}
                   />
+                  <audio src={Avatar8} autoPlay loop={false} controls={false} />
                 </Fader>
               )}
             </Container>
@@ -404,25 +412,25 @@ const PageSix = ({ userName, onProceed }) => {
         </>
       )}
 
-      {![0].includes(currentTypography) && (
-        <Box
-          sx={{
-            position: "fixed",
-            bottom: "40px",
-            right: "40px",
-            padding: "10px",
-            cursor: "pointer",
-          }}
-          onClick={handleNextTypography}
-        >
-          <ArrowCircleRightIcon
+      {![0].includes(currentTypography) &&
+        !(
+          (userChoice === "Convince" &&
+            [3, 4, 5, 7, 8].includes(currentTypography)) ||
+          (userChoice === "Reach" && currentTypography === 6)
+        ) && (
+          <Box
             sx={{
-              fontSize: 82,
-              color: [0, 1].includes(currentTypography) ? "black" : "white",
+              position: "fixed",
+              bottom: "40px",
+              right: "40px",
+              padding: "10px",
+              cursor: "pointer",
             }}
-          />
-        </Box>
-      )}
+            onClick={handleNextTypography}
+          >
+            <Arrow />
+          </Box>
+        )}
     </div>
   );
 };

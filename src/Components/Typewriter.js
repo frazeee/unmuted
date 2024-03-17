@@ -9,7 +9,7 @@ const Typewriter = ({ children }) => {
   useEffect(() => {
     const typed = new Typed(typedElement.current, {
       strings: [children.props.children], // Extract the text from children props
-      typeSpeed: 40, // Adjust typing speed as desired
+      typeSpeed: 32, // Adjust typing speed as desired
       showCursor: false,
     });
 

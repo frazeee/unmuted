@@ -46,7 +46,7 @@ function App() {
       audioRef.current.volume = 0.01;
       audioRef.current.play();
     } else {
-      audioRef.current.pause(); // Pause audio if isPlaying is false
+      audioRef.current.pause();
     }
   }, [isPlaying]);
 
@@ -55,6 +55,8 @@ function App() {
   };
 
 
+  console.log(page)
+  
   return (
     <>
       <audio

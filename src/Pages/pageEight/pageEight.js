@@ -13,7 +13,7 @@ import Background from "../../Backgrounds/14.2B.png";
 import Fader from "../../Components/Fader";
 
 const PageEight = ({ userName, onProceed }) => {
-  const [currentTypography, setCurrentTypography] = useState(4);
+  const [currentTypography, setCurrentTypography] = useState(0);
 
   const handleNextTypography = () => {
     setCurrentTypography((currentTypography) => currentTypography + 1);
@@ -47,6 +47,7 @@ const PageEight = ({ userName, onProceed }) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              color: "white"
             }}
           >
             <div
@@ -57,6 +58,7 @@ const PageEight = ({ userName, onProceed }) => {
                 variant="h4"
                 sx={{
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  
                 }}
                 gutterBottom
               >
@@ -94,7 +96,7 @@ const PageEight = ({ userName, onProceed }) => {
                 }}
                 gutterBottom
               >
-                t's time to unmute and let your voice be heard. When we share
+                It's time to unmute and let your voice be heard. When we share
                 our stories and listen to each other, we create a powerful force
                 for healing.
               </Typography>

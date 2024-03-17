@@ -172,10 +172,7 @@ const PageFour = ({ userName, onProceed }) => {
               fontFamily: "Figtree",
             }}
           >
-            <Fader
-              onNextTypography={handleNextTypography}
-              intervalTime={5000}
-            >
+            <Fader onNextTypography={handleNextTypography} intervalTime={5000}>
               <div className="fade-in" style={{ textAlign: "center" }}>
                 <Container maxWidth="md">
                   <Subtitle text={`${userName}: “No... not again.”`} />
@@ -289,10 +286,10 @@ const PageFour = ({ userName, onProceed }) => {
         )}
         {currentTypography === 7 && (
           <Fader onNextTypography={handleNextTypography} intervalTime={8000000}>
-       <div className="image-container">
-                {" "}
-                <img src={Statistics3} />
-              </div>
+            <div className="image-container">
+              {" "}
+              <img src={Statistics3} />
+            </div>
           </Fader>
         )}
 
@@ -320,12 +317,17 @@ const PageFour = ({ userName, onProceed }) => {
                 {currentTypography === 8 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={100000}
+                    intervalTime={9000}
                   >
                     <Subtitle
                       text={`${userName}: “It's happening again... I can't let them get away with this.”`}
                     />
-                    <audio src={Avatar3} autoPlay loop={false} controls={false} />
+                    <audio
+                      src={Avatar3}
+                      autoPlay
+                      loop={false}
+                      controls={false}
+                    />
                   </Fader>
                 )}
                 {currentTypography === 9 && (
@@ -437,7 +439,7 @@ const PageFour = ({ userName, onProceed }) => {
             }}
           >
             <div className="fade-in" style={{ textAlign: "center" }}>
-              <Container maxWidth="md">
+              <Container maxWidth="lg">
                 {currentTypography === 8 && (
                   <>
                     <Fader
@@ -478,7 +480,7 @@ const PageFour = ({ userName, onProceed }) => {
               </Container>
             </div>
             {currentTypography === 10 && (
-              <Container maxWidth="md">
+              <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
                   intervalTime={10000}
@@ -510,7 +512,7 @@ const PageFour = ({ userName, onProceed }) => {
                   fontFamily: "Figtree",
                 }}
               >
-                <Container maxWidth="md">
+                <Container maxWidth="lg">
                   <Fader
                     onNextTypography={handleNextTypography}
                     intervalTime={1000000}
@@ -546,7 +548,7 @@ const PageFour = ({ userName, onProceed }) => {
         )}
       </div>
 
-      {(![6, 11].includes(currentTypography) ||
+      {(![4, 6, 8, 11].includes(currentTypography) ||
         (currentTypography === 11 && userChoice === "Report")) && (
         <Box
           sx={{

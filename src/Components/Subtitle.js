@@ -8,7 +8,7 @@ const Subtitle = ({ text }) => {
   return (
     <Typewriter>
       <Typography
-        variant="h5"
+        variant="h4"
         sx={{ mt: 48 }}
         style={{
           fontWeight: 500,

@@ -266,7 +266,7 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
                   fontFamily: "Work Sans",
                   color: "white",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                  mb: 4
+                  mb: 4,
                 }}
               >
                 Let's uncover {userName}'s story
@@ -308,7 +308,7 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
                   variant="h4"
                   sx={{
                     color: "white",
-                    mt:4,
+                    mt: 4,
                     fontFamily: "Work Sans",
                     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                   }}
@@ -319,7 +319,7 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
             </>
           )}
         </div>
-        {![2, 6].includes(currentTypography) && (
+        {![2, 3, 6].includes(currentTypography) && (
           <Box
             sx={{
               position: "fixed",
