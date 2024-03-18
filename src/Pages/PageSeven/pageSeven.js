@@ -40,9 +40,9 @@ import PhoneRinging from "../../Audio/SFX/Phone Ringing.mp3";
 import Subtitle from "../../Components/Subtitle";
 import Fader from "../../Components/Fader";
 
-const PageSeven = ({ userName, onProceed }) => {
+const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
   const [currentTypography, setCurrentTypography] = useState(0);
-  const [userChoice, setUserChoice] = useState("");
+  const [userChoice, setUserChoice] = useState("Seek");
   const [showChoiceRoute, setShowChoiceRoute] = useState(false);
 
   const handleNextTypography = () => {
@@ -52,7 +52,7 @@ const PageSeven = ({ userName, onProceed }) => {
     setCurrentTypography((currentTypography) => currentTypography + 1);
   };
 
-  console.log(currentTypography, userChoice, showChoiceRoute);
+ 
 
   const handleChoice = (choice) => {
     setCurrentTypography(1);
@@ -66,6 +66,9 @@ const PageSeven = ({ userName, onProceed }) => {
   };
 
   useEffect(() => {
+    if(currentTypography === 17){
+      handlePlayPause();
+    }
     if (currentTypography === 21) {
       onProceed();
     }
@@ -243,7 +246,7 @@ const PageSeven = ({ userName, onProceed }) => {
                       fontWeight: "500",
                     }}
                   >
-                    She loses her appetite, struggles to concentrate at school,
+                    She loses her appetite, struggles to concentrate <br/> at school,
                     and withdraws from social activities.
                   </Typography>
                 </Fader>
@@ -443,7 +446,7 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={6000}
+                  intervalTime={5000}
                 >
                   <Subtitle
                     text={`Dr. Faith: “It sounds like you're recognizing the signs of a relapse early.”`}
@@ -562,7 +565,7 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={12000}
+                  intervalTime={11000}
                 >
                   <Subtitle
                     text={`${userName}:  “Yeah, I just had a session. It helped and I'm feeling more hopeful now.
@@ -621,7 +624,7 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={8000}
+                  intervalTime={6000}
                 >
                   <Subtitle
                     text={`Dr Faith: “You're making significant progress, I'm proud of how far you've come.”
@@ -635,7 +638,7 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={7000}
+                  intervalTime={6000}
                 >
                   <Subtitle
                     text={`Hope: “You're doing amazing! We're all here for you, every step of the way.”

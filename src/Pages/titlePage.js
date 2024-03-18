@@ -18,7 +18,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 600,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -233,49 +233,36 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                 psychological impact of sexual harassment, with a particular
                 focus on its prevalence and effects within online environments.
               </Typography>
-              <Typography sx={{ mt: 2 }} style={{ fontFamily: "Figtree" }}>
+              <Typography sx={{ mt: 2, mb:2 }} style={{ fontFamily: "Figtree" }}>
                 The creatives behind this project, Julia de Armas and Kayi
                 Tamsi, advocate against sexual harassment.
               </Typography>
 
               <Typography
                 variant="subtitle1"
-                sx={{ mt: 2 }}
+                sx={{ mt: 0.5 }}
                 style={{ fontFamily: "Figtree" }}
               >
-                Team:
+                <strong>Julia de Armas:</strong> Research and Scriptwriting,
+                Cinematography
               </Typography>
-              <ul>
-                <li>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{ mt: 0.5 }}
-                    style={{ fontFamily: "Figtree" }}
-                  >
-                    <strong>Julia de Armas:</strong> Research and Scriptwriting,
-                    Cinematography
-                  </Typography>
-                </li>
-                <li>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{ mt: 0.5 }}
-                    style={{ fontFamily: "Figtree" }}
-                  >
-                    <strong>Kayi Tamsi:</strong> Creative Direction, Audio and
-                    Visuals
-                  </Typography>
-                </li>
-                <li>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{ mt: 0.5 }}
-                    style={{ fontFamily: "Figtree" }}
-                  >
-                    <strong>Kyle Uy:</strong> Web Consultant
-                  </Typography>
-                </li>
-              </ul>
+
+              <Typography
+                variant="subtitle1"
+                sx={{ mt: 0.5 }}
+                style={{ fontFamily: "Figtree" }}
+              >
+                <strong>Kayi Tamsi:</strong> Creative Direction, Audio and
+                Visuals
+              </Typography>
+
+              <Typography
+                variant="subtitle1"
+                sx={{ mt: 0.5 }}
+                style={{ fontFamily: "Figtree" }}
+              >
+                <strong>Kyle Uy:</strong> Web Consultant
+              </Typography>
             </Box>
           </Modal>
 
@@ -299,7 +286,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Typography style={{ color: "blue", fontFamily: "Figtree" }}>
+                <Typography style={{ color: "black", fontFamily: "Figtree" }}>
                   https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20M
                   <br />
                   was%20home%20to,percent%20of%20the%
@@ -322,7 +309,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Typography style={{ color: "blue", fontFamily: "Figtree" }}>
+                <Typography style={{ color: "black", fontFamily: "Figtree" }}>
                   https://plan-international.org/philippines/news/2020/10/16/7-in-10-girls-and-young-women-in-ph-experience-online-harassment-plan-international-study/
                 </Typography>
               </Link>
@@ -337,18 +324,43 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
               <Link
                 variant="subtitle1"
                 sx={{ mt: 2 }}
-                href="https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20Mwas%20home%20to,percent%20of%20the%20total%20population."
+                href="https://journals.sagepub.com/doi/10.1177/08862605221147064"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Typography style={{ color: "blue", fontFamily: "Figtree" }}>
-                  https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20M
+                <Typography style={{ color: "black", fontFamily: "Figtree" }}>
+                  https://journals.sagepub.com/doi/10.1177
                   <br />
-                  was%20home%20to,percent%20of%20the%
-                  <br />
-                  20total%20population.
+                  /08862605221147064
                 </Typography>
               </Link>
+              <Typography
+                sx={{ mt: 2 }}
+                style={{ fontFamily: "Figtree", fontWeight: "bold" }}
+              >
+                “Research proves that ignoring harassment doesn't stop it.”
+                (2017)
+              </Typography>
+              <Link
+                variant="subtitle1"
+                sx={{ mt: 2 }}
+                href="https://www.pewresearch.org/internet/2017/07/11/online-harassment-in-focus-most-recent-experience/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Typography style={{ color: "black", fontFamily: "Figtree" }}>
+                  https://www.pewresearch.org/internet/2017/07/11/online-harassment-in-focus-most-recent-experience/
+                </Typography>
+              </Link>
+              <Typography
+                sx={{ mt: 2 }}
+                style={{ color: "black", fontFamily: "Figtree" }}
+              >
+                We would also like to acknowledge the students, teachers, and
+                mental health experts who contributed to our ideation and
+                decision-making process, ensuring that we create a story that is
+                both genuine and transformative.
+              </Typography>
             </Box>
           </Modal>
 

@@ -334,7 +334,7 @@ const PageFour = ({ userName, onProceed }) => {
                 {currentTypography === 8 && (
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={9000}
+                    intervalTime={8000}
                   >
                     <Subtitle
                       text={`${userName}: “It's happening again... I can't let them get away with this.”`}

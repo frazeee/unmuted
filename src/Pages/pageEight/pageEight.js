@@ -334,6 +334,7 @@ const PageEight = ({ userName, onProceed }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
+                      fontWeight: "500"
                     }}
                     sx={{ fontSize: "18px", px: 2, mb: 3, mt: -3 }}
                     onClick={() => {
@@ -355,6 +356,7 @@ const PageEight = ({ userName, onProceed }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
+                      fontWeight: "500"
                     }}
                     sx={{ fontSize: "18px" }}
                     onClick={handleCopyLink}

@@ -181,8 +181,21 @@ const PageSix = ({ userName, onProceed }) => {
                     }}
                   >
                     {userName}'s friends notice her withdrawal and express
-                    concern, urging her to seek help. She brushes off their
-                    worries, insisting that she's managing just fine on her own.
+                    concern, <br />
+                    urging her to seek help.
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      color: "white",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
+                      mt: 4,
+                    }}
+                  >
+                    She brushes off their worries, insisting that she's
+                    <br /> managing just fine on her own.
                   </Typography>
                 </Fader>
               )}
@@ -302,7 +315,10 @@ const PageSix = ({ userName, onProceed }) => {
         <>
           <div
             style={{
-              backgroundImage: currentTypography >= 4? `url(${Background181C})`: `url(${Background181A})`,
+              backgroundImage:
+                currentTypography >= 4
+                  ? `url(${Background181C})`
+                  : `url(${Background181A})`,
               backgroundSize: "cover",
               height: "100vh",
               width: "100vw",

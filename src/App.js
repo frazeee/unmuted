@@ -12,6 +12,7 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 
 import BackgroundMusic from "./Audio/BGMusic.mp3";
+import OutroMusic from "./Audio/OUTRO.mp3";
 import PageSeven from "./Pages/PageSeven/pageSeven";
 import PageEight from "./Pages/pageEight/pageEight";
 import EndPage from "./Pages/endpage/endPage";
@@ -35,7 +36,9 @@ function App() {
 
   const [userName, setUsername] = useState("Rachel");
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isOutroPlaying, setIsOutroPlaying] = useState(false);
   const audioRef = useRef(null);
+  const outroRef = useRef(null);
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -54,9 +57,19 @@ function App() {
     setUsername(userName);
   };
 
+  const handleOutroPlayPause = () => {
+    setIsOutroPlaying(!isOutroPlaying);
+  };
 
-  console.log(page)
-  
+  useEffect(() => {
+    if (isOutroPlaying) {
+      outroRef.current.volume = 0.01; // Adjust volume as needed
+      outroRef.current.play();
+    } else {
+      outroRef.current.pause();
+    }
+  }, [isOutroPlaying]);
+
   return (
     <>
       <audio
@@ -67,6 +80,9 @@ function App() {
         loop
       >
         {" "}
+        Your browser does not support the audio element.
+      </audio>
+      <audio ref={outroRef} src={OutroMusic} controls={false} loop>
         Your browser does not support the audio element.
       </audio>
       <ThemeProvider theme={theme}>
@@ -96,13 +112,14 @@ function App() {
             <PageSix onProceed={handleProceed} userName={userName} />
           )}
           {page === 6 && (
-            <PageSeven onProceed={handleProceed} userName={userName} />
+            <PageSeven
+              onProceed={handleProceed}
+              userName={userName}
+              handlePlayPause={handleOutroPlayPause}
+            />
           )}
           {page === 7 && (
             <PageEight onProceed={handleProceed} userName={userName} />
-          )}
-          {page === 8 && (
-            <EndPage onProceed={handleProceed} userName={userName} />
           )}
         </div>
       </ThemeProvider>
