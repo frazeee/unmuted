@@ -15,7 +15,7 @@ import BackgroundMusic from "./Audio/BGMusic.mp3";
 import OutroMusic from "./Audio/OUTRO.mp3";
 import PageSeven from "./Pages/PageSeven/pageSeven";
 import PageEight from "./Pages/pageEight/pageEight";
-import EndPage from "./Pages/endpage/endPage";
+
 
 function App() {
   const theme = createTheme({
