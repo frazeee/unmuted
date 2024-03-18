@@ -27,7 +27,7 @@ function App() {
 
   responsiveFontSizes(theme);
 
-  const [page, setPage] = useState(6);
+  const [page, setPage] = useState(0);
 
   const handleProceed = () => {
     setPage((prevPage) => prevPage + 1);
