@@ -147,6 +147,8 @@ const PageEight = ({ userName, onProceed }) => {
                 sx={{
                   color: "white",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  fontFamily: "Figtree",
+                  fontWeight: "500",
                 }}
               >
                 United, we can create a world where all voices matter and
