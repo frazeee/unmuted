@@ -10,7 +10,7 @@ import Background182A from "../../Backgrounds/18.2A.png";
 import Background182B from "../../Backgrounds/18.2B.png";
 import Background181A from "../../Backgrounds/18.1A.png";
 import Background181C from "../../Backgrounds/18.1C.png";
-import Statistics5 from "../../Statistics/Statistics-Visualizers-05.png";
+import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
 
 import Avatar8 from "../../Audio/Avatar/AVATAR 8.mp3";
 import Avatar9 from "../../Audio/Avatar/AVATAR 9.mp3";
@@ -114,8 +114,9 @@ const PageSix = ({ userName, onProceed }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
+                      fontWeight: "400",
                     }}
-                    sx={{ fontSize: "24px", px: 10 }}
+                    sx={{ fontSize: "24px", px: 10, lineHeight: "35px" }}
                   >
                     Reach out to <br /> a professional
                   </Button>
@@ -128,8 +129,9 @@ const PageSix = ({ userName, onProceed }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
+                      fontWeight: "400",
                     }}
-                    sx={{ fontSize: "24px", px: 5 }}
+                    sx={{ fontSize: "24px", px: 5, lineHeight: "35px" }}
                   >
                     Convince herself that <br /> she can do this alone
                   </Button>
@@ -141,9 +143,50 @@ const PageSix = ({ userName, onProceed }) => {
       )}
 
       {currentTypography === 1 && (
-        <Fader onNextTypography={handleNextTypography} intervalTime={10000000}>
-          <div className="image-container">
-            <img src={Statistics5} />
+        <Fader onNextTypography={handleNextTypography} intervalTime={4000}>
+          <div
+            className="typewriter-container"
+            style={{
+              backgroundImage: `url(${WhiteGrunge})`,
+            }}
+          >
+            <Container maxWidth="lg">
+              <Typography
+                variant="h4"
+                style={{
+                  backgroundColor: "red",
+                  width: "13%",
+                  boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.5)",
+                }}
+                sx={{
+                  fontFamily: "Figtree",
+                  fontWeight: "900",
+                  color: "white",
+                  mx: "auto",
+                  py: 0.5
+                }}
+              >
+                FACT
+              </Typography>
+
+              <Typography
+                variant="h4"
+                sx={{
+                  fontFamily: "Figtree",
+                  fontWeight: "500",
+                  color: "black",
+                  mt: 3,
+                }}
+              >
+                Those who have experienced the incident may feel{" "}
+                <span style={{ fontWeight: "800" }}>ashamed</span> and may
+                not want others to know what happened. They might
+                <span style={{ fontWeight: "800" }}> {" "}
+                  avoid seeking help
+                </span>{" "}
+                or reporting their experience.
+              </Typography>
+            </Container>
           </div>
         </Fader>
       )}
@@ -299,6 +342,7 @@ const PageSix = ({ userName, onProceed }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
+                      fontWeight: "400",
                     }}
                     onClick={handleRoute}
                   >
@@ -328,7 +372,7 @@ const PageSix = ({ userName, onProceed }) => {
               color: "white",
             }}
           >
-            <Container maxWidth="lg">
+            <Container maxWidth={currentTypography === 2 ? "xl" : "lg"}>
               {currentTypography === 2 && (
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -355,7 +399,6 @@ const PageSix = ({ userName, onProceed }) => {
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                       fontWeight: "500",
-                      mt: 3,
                     }}
                   >
                     The therapist, Dr. Faith, listens attentively as {userName}{" "}
@@ -421,7 +464,7 @@ const PageSix = ({ userName, onProceed }) => {
         </>
       )}
 
-      {![0].includes(currentTypography) &&
+      {![0 , 1].includes(currentTypography) &&
         !(
           (userChoice === "Convince" &&
             [3, 4, 5, 7, 8].includes(currentTypography)) ||

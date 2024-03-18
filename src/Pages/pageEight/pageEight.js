@@ -73,7 +73,7 @@ const PageEight = ({ userName, onProceed }) => {
                   sx={{
                     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                     fontFamily: "Figtree",
-                    fontWeight: "500",
+                    fontWeight: "400",
                   }}
                   gutterBottom
                 >
@@ -111,7 +111,7 @@ const PageEight = ({ userName, onProceed }) => {
                   sx={{
                     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                     fontFamily: "Figtree",
-                    fontWeight: "500",
+                    fontWeight: "400",
                   }}
                   gutterBottom
                 >
@@ -148,7 +148,7 @@ const PageEight = ({ userName, onProceed }) => {
                   color: "white",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                   fontFamily: "Figtree",
-                  fontWeight: "500",
+                  fontWeight: "400",
                 }}
               >
                 United, we can create a world where all voices matter and
@@ -182,7 +182,7 @@ const PageEight = ({ userName, onProceed }) => {
                   color: "#ffee1a",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                   fontFamily: "Figtree",
-                  fontWeight: "500",
+                  fontWeight: "400",
                   mb: 5,
                 }}
               >
@@ -206,12 +206,13 @@ const PageEight = ({ userName, onProceed }) => {
                   <Button
                     variant="outlined"
                     style={{
+                      textTransform: "none",
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                       width: "100%",
                     }}
-                    sx={{ fontSize: "18px", mb: 6 }}
+                    sx={{ fontSize: "20px", mb: 6 }}
                     onClick={() =>
                       window.open("https://cybercrime.doj.gov.ph", "_blank")
                     }
@@ -222,11 +223,12 @@ const PageEight = ({ userName, onProceed }) => {
                   <Button
                     variant="outlined"
                     style={{
+                      textTransform: "none",
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                     }}
-                    sx={{ fontSize: "18px" }}
+                    sx={{ fontSize: "20px" }}
                     onClick={() =>
                       window.open(
                         "https://dict.gov.ph/cybercrime-investigation-and-coordinating-center-cicc/",
@@ -253,11 +255,12 @@ const PageEight = ({ userName, onProceed }) => {
                   <Button
                     variant="outlined"
                     style={{
+                      textTransform: "none",
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                     }}
-                    sx={{ fontSize: "18px", mb: 2, px: 2 }}
+                    sx={{ fontSize: "20px", mb: 2, px: 2 }}
                     onClick={() =>
                       window.open(
                         "https://www.dlsu.edu.ph/offices/osa/occs-home/",
@@ -271,11 +274,12 @@ const PageEight = ({ userName, onProceed }) => {
                   <Button
                     variant="outlined"
                     style={{
+                      textTransform: "none",
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                     }}
-                    sx={{ fontSize: "18px", mb: 5, px: 2 }}
+                    sx={{ fontSize: "20px", mb: 5, px: 2 }}
                     onClick={() =>
                       window.open("https://www.facebook.com/LCIDW/", "_blank")
                     }
@@ -299,12 +303,13 @@ const PageEight = ({ userName, onProceed }) => {
                   <Button
                     variant="outlined"
                     style={{
+                      textTransform: "none",
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                       width: "100%",
                     }}
-                    sx={{ fontSize: "18px", mb: 6 }}
+                    sx={{ fontSize: "20px", mb: 6 }}
                     onClick={() =>
                       window.open("https://www.fullypsych.com/", "_blank")
                     }
@@ -314,11 +319,12 @@ const PageEight = ({ userName, onProceed }) => {
                   <Button
                     variant="outlined"
                     style={{
+                      textTransform: "none",
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                     }}
-                    sx={{ fontSize: "18px", px: 5 }}
+                    sx={{ fontSize: "20px", px: 5 }}
                     onClick={() => window.open("https://ncmh.gov.ph", "_blank")}
                   >
                     The National Center of Mental Health
@@ -334,9 +340,9 @@ const PageEight = ({ userName, onProceed }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
-                      fontWeight: "500"
+                      fontWeight: "400"
                     }}
-                    sx={{ fontSize: "18px", px: 2, mb: 3, mt: -3 }}
+                    sx={{ fontSize: "20px", px: 2, mb: 3, mt: -3 }}
                     onClick={() => {
                       window.open(
                         "https://pcw.gov.ph/faq-republic-act-no-11313/",
@@ -356,9 +362,9 @@ const PageEight = ({ userName, onProceed }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
-                      fontWeight: "500"
+                      fontWeight: "400"
                     }}
-                    sx={{ fontSize: "18px" }}
+                    sx={{ fontSize: "20px" }}
                     onClick={handleCopyLink}
                   >
                     Click to share with your friends

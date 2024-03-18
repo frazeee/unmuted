@@ -18,7 +18,7 @@ import Background161B from "../../Backgrounds/16.1B.png";
 import Background161C from "../../Backgrounds/16.1C.png";
 import Background162A from "../../Backgrounds/16.2A.mp4";
 import Background162B from "../../Backgrounds/16.2B.png";
-import Statistics4 from "../../Statistics/Statistics-Visualizers-04.png";
+import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
 
 import Avatar4 from "../../Audio/Avatar/AVATAR 4.mp3";
 import Avatar5 from "../../Audio/Avatar/AVATAR 5.mp3";
@@ -125,8 +125,14 @@ const PageFive = ({ userName, onProceed }) => {
                   boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                   fontFamily: "Figtree",
+                  fontWeight: "400",
                 }}
-                sx={{ fontSize: "24px", mx: 5, fontWeight: "bold" }}
+                sx={{
+                  fontSize: "24px",
+                  mx: 5,
+                  fontWeight: "bold",
+                  lineHeight: "35px",
+                }}
                 onClick={() => handleChoice("Keep")}
               >
                 “Keep it to yourself. <br /> Your life will be peaceful that
@@ -140,8 +146,14 @@ const PageFive = ({ userName, onProceed }) => {
                   boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                   fontFamily: "Figtree",
+                  fontWeight: "400",
                 }}
-                sx={{ fontSize: "24px", mx: 5, fontWeight: "bold" }}
+                sx={{
+                  fontSize: "24px",
+                  mx: 5,
+                  fontWeight: "bold",
+                  lineHeight: "35px",
+                }}
                 onClick={() => handleChoice("Tell")}
               >
                 “You don't have to go through this alone.
@@ -153,13 +165,63 @@ const PageFive = ({ userName, onProceed }) => {
       )}
 
       {currentTypography === 1 && (
-        <Fader
-          onNextTypography={handleNextTypography}
-          intervalTime={10000000000}
-        >
-          <div className="image-container">
-            {" "}
-            <img src={Statistics4} />
+        <Fader onNextTypography={handleNextTypography} intervalTime={5000}>
+          <div
+            className="typewriter-container"
+            style={{
+              backgroundImage: `url(${WhiteGrunge})`,
+            }}
+          >
+            <Container maxWidth="lg">
+              <Typography
+                variant="h4"
+                style={{
+                  backgroundColor: "red",
+                  width: "30%",
+                  boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.5)",
+                }}
+                sx={{
+                  fontFamily: "Figtree",
+                  fontWeight: "900",
+                  color: "white",
+                  mx: "auto",
+                  py: 0.5
+                }}
+              >
+                DID YOU KNOW?
+              </Typography>
+
+              <Typography
+                variant="h4"
+                sx={{
+                  fontFamily: "Figtree",
+                  fontWeight: "500",
+                  color: "black",
+                  mt: 3,
+                }}
+              >
+                Many people cope by
+                <span style={{ fontWeight: "800", margin: "5px" }}>
+                  pretending it didn't happen,
+                </span>
+                hoping to return to normalcy.
+              </Typography>
+              <Typography
+                variant="h4"
+                sx={{
+                  fontFamily: "Figtree",
+                  fontWeight: "500",
+                  color: "black",
+                  mt: 3,
+                }}
+              >
+                However,
+                <span style={{ fontWeight: "800", margin: "10px" }}>
+                  talking about the incident
+                </span>
+                is an important step for healing.
+              </Typography>
+            </Container>
           </div>
         </Fader>
       )}
@@ -246,7 +308,7 @@ const PageFive = ({ userName, onProceed }) => {
                         fontWeight: "500",
                       }}
                     >
-                      She feels isolated and alone, unable to share her <br/>
+                      She feels isolated and alone, unable to share her <br />
                       experiences with anyone.
                     </Typography>
                   </Fader>
@@ -289,6 +351,7 @@ const PageFive = ({ userName, onProceed }) => {
                         boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                         fontFamily: "Figtree",
+                        fontWeight: "400",
                       }}
                       onClick={handleRoute}
                     >
@@ -574,7 +637,7 @@ const PageFive = ({ userName, onProceed }) => {
         </>
       )}
 
-      {![0, 3, 5].includes(currentTypography) &&
+      {![0, 1, 3, 5].includes(currentTypography) &&
         !(
           userChoice === "Tell" &&
           [4, 5, 6, 7, 8, 9, 10, 12, 13].includes(currentTypography)

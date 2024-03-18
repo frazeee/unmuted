@@ -16,7 +16,6 @@ import OutroMusic from "./Audio/OUTRO.mp3";
 import PageSeven from "./Pages/PageSeven/pageSeven";
 import PageEight from "./Pages/pageEight/pageEight";
 
-
 function App() {
   const theme = createTheme({
     palette: {
@@ -28,7 +27,7 @@ function App() {
 
   responsiveFontSizes(theme);
 
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(6);
 
   const handleProceed = () => {
     setPage((prevPage) => prevPage + 1);
@@ -69,6 +68,8 @@ function App() {
       outroRef.current.pause();
     }
   }, [isOutroPlaying]);
+
+
 
   return (
     <>
@@ -115,7 +116,8 @@ function App() {
             <PageSeven
               onProceed={handleProceed}
               userName={userName}
-              handlePlayPause={handleOutroPlayPause}
+              handlePlayPause={handlePlayPause}
+              handleOutroPlayPause={handleOutroPlayPause}
             />
           )}
           {page === 7 && (

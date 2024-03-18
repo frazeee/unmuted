@@ -48,9 +48,11 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
   };
   const handleNextTypography = () => {
     setCurrentTypography((currentTypography) => currentTypography + 1);
+    if (currentTypography + 1 === 1) {
+      onPlayPause();
+    }
     if (currentTypography + 1 === 2) {
       onProceed();
-      onPlayPause();
     }
   };
 
@@ -233,7 +235,10 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                 psychological impact of sexual harassment, with a particular
                 focus on its prevalence and effects within online environments.
               </Typography>
-              <Typography sx={{ mt: 2, mb:2 }} style={{ fontFamily: "Figtree" }}>
+              <Typography
+                sx={{ mt: 2, mb: 2 }}
+                style={{ fontFamily: "Figtree" }}
+              >
                 The creatives behind this project, Julia de Armas and Kayi
                 Tamsi, advocate against sexual harassment.
               </Typography>
@@ -272,89 +277,82 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                 <b>References</b>
               </Typography>
 
-              <Typography
-                sx={{ mt: 2 }}
-                style={{ fontFamily: "Figtree", fontWeight: "bold" }}
-              >
-                “About 73% of Filipinos are social media users.” Simon Kemp
-                (2023){" "}
+              <Typography style={{ color: "black", fontFamily: "Figtree" }}>
+                Statistics mentioned in the hypernarrative were retrieved from
+                the following sources:
               </Typography>
-              <Link
-                variant="subtitle1"
-                sx={{ mt: 2 }}
-                href="https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20Mwas%20home%20to,percent%20of%20the%20total%20population."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Typography style={{ color: "black", fontFamily: "Figtree" }}>
-                  https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20M
-                  <br />
-                  was%20home%20to,percent%20of%20the%
-                  <br />
-                  20total%20population.
-                </Typography>
-              </Link>
+              <ul>
+                <li>
+                  <Link
+                    variant="subtitle1"
+                    sx={{ mt: 4 }}
+                    href="https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20Mwas%20home%20to,percent%20of%20the%20total%20population."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Typography
+                      style={{ color: "black", fontFamily: "Figtree", fontWeight: "bold" }}
+                    >
+                      “About 73% of Filipinos are social media users.” Simon
+                      Kemp (2023)
+                    </Typography>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    variant="subtitle1"
+                    href="https://plan-international.org/philippines/news/2020/10/16/7-in-10-girls-and-young-women-in-ph-experience-online-harassment-plan-international-study/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Typography
+                      style={{ color: "black", fontFamily: "Figtree", fontWeight: "bold" }}
+                      sx={{ mt: 2 }}
+                    >
+                      “Nearly 7 in 10 girls and young women in the Philippines
+                      have experienced harassment on social media. These
+                      harassments happen frequently.” Aly Narvaez (2020)
+                    </Typography>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    variant="subtitle1"
+                    href="https://journals.sagepub.com/doi/10.1177/08862605221147064"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Typography
+                      style={{ color: "black", fontFamily: "Figtree", fontWeight: "bold" }}
+                      sx={{ mt: 2 }}
+                    >
+                      “Those who have experienced the incident may feel ashamed
+                      and may not want others to know what happened. They might
+                      avoid seeking help or reporting their experience.”
+                    </Typography>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    variant="subtitle1"
+                    href="https://www.pewresearch.org/internet/2017/07/11/online-harassment-in-focus-most-recent-experience/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Typography
+                      style={{ color: "black", fontFamily: "Figtree", fontWeight: "bold" }}
+                      sx={{ mt: 2 }}
+                    >
+                      “Research proves that ignoring harassment doesn't stop
+                      it.” (2017)
+                    </Typography>
+                  </Link>
+                </li>
+              </ul>
+
               <Typography
                 sx={{ mt: 2 }}
-                style={{ fontFamily: "Figtree", fontWeight: "bold" }}
-              >
-                “Nearly 7 in 10 girls and young women in the Philippines have
-                experienced harassment on social media. These harassments happen
-                frequently.” Aly Narvaez (2020)
-              </Typography>
-              <Link
-                variant="subtitle1"
-                sx={{ mt: 2 }}
-                href="https://plan-international.org/philippines/news/2020/10/16/7-in-10-girls-and-young-women-in-ph-experience-online-harassment-plan-international-study/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Typography style={{ color: "black", fontFamily: "Figtree" }}>
-                  https://plan-international.org/philippines/news/2020/10/16/7-in-10-girls-and-young-women-in-ph-experience-online-harassment-plan-international-study/
-                </Typography>
-              </Link>
-              <Typography
-                sx={{ mt: 2 }}
-                style={{ fontFamily: "Figtree", fontWeight: "bold" }}
-              >
-                “Those who have experienced the incident may feel ashamed and
-                may not want others to know what happened. They might avoid
-                seeking help or reporting their experience.”
-              </Typography>
-              <Link
-                variant="subtitle1"
-                sx={{ mt: 2 }}
-                href="https://journals.sagepub.com/doi/10.1177/08862605221147064"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Typography style={{ color: "black", fontFamily: "Figtree" }}>
-                  https://journals.sagepub.com/doi/10.1177
-                  <br />
-                  /08862605221147064
-                </Typography>
-              </Link>
-              <Typography
-                sx={{ mt: 2 }}
-                style={{ fontFamily: "Figtree", fontWeight: "bold" }}
-              >
-                “Research proves that ignoring harassment doesn't stop it.”
-                (2017)
-              </Typography>
-              <Link
-                variant="subtitle1"
-                sx={{ mt: 2 }}
-                href="https://www.pewresearch.org/internet/2017/07/11/online-harassment-in-focus-most-recent-experience/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Typography style={{ color: "black", fontFamily: "Figtree" }}>
-                  https://www.pewresearch.org/internet/2017/07/11/online-harassment-in-focus-most-recent-experience/
-                </Typography>
-              </Link>
-              <Typography
-                sx={{ mt: 2 }}
-                style={{ color: "black", fontFamily: "Figtree" }}
+                style={{ color: "black", fontFamily: "Figtree", }}
               >
                 We would also like to acknowledge the students, teachers, and
                 mental health experts who contributed to our ideation and

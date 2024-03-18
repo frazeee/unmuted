@@ -1,14 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Typography,
-  Paper,
   TextField,
   Button,
   Grid,
-  SvgIcon,
   Box,
   Container,
-  Fade,
 } from "@mui/material";
 import "./styles.css";
 import "../../Fonts/fonts.css";
@@ -18,13 +15,13 @@ import Arrow from "../../Components/Arrow.js";
 
 import Background from "../../Backgrounds/Slide5-6.mp4";
 import Background2 from "../../Backgrounds/Slide8.mp4";
-import Statistic1 from "../../Statistics/Statistics-Visualizers-01.png";
+
 import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
 import Fader from "../../Components/Fader";
 
 const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
-  const [currentTypography, setCurrentTypography] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTypography, setCurrentTypography] = useState(4);
+
   const [name, setName] = useState("Rachel");
 
   const handleSubmit = (event) => {
@@ -33,7 +30,7 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
   };
 
   const handleNextTypography = () => {
-    setCurrentTypography(currentTypography + 1);
+    setCurrentTypography(currentTypography + 1); // Update currentTypography after 1 second
   };
 
   useEffect(() => {
@@ -59,7 +56,7 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
           {currentTypography === 0 && (
             <Fader
               onNextTypography={handleNextTypography}
-              intervalTime={1000000000}
+              intervalTime={10000000000}
             >
               <Typography
                 variant="h4"
@@ -209,11 +206,51 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
           {currentTypography === 4 && (
             <Fader
               onNextTypography={handleNextTypography}
-              intervalTime={7000000}
+              intervalTime={4000}
             >
-              <div className="image-container">
-                {" "}
-                <img src={Statistic1} />
+              <div
+                className="typewriter-container"
+                style={{
+                  backgroundImage: `url(${WhiteGrunge})`,
+                }}
+              >
+                <div>
+                  <Typography
+                    variant="h4"
+                    style={{
+                      backgroundColor: "red",
+                      width: "22%",
+                      boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.5)",
+                    }}
+                    sx={{
+                      fontFamily: "Figtree",
+                      fontWeight: "900",
+                      color: "white",
+                      mx: "auto",
+                      py: 0.5
+                    }}
+                  >
+                    FACT
+                  </Typography>
+
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
+                      color: "black",
+                      mt: 3,
+                    }}
+                  >
+                    <span style={{ fontWeight: "800" }}>73%</span> of Filipinos
+                    are social media users.
+                    <br /> Gen Z, aged 18 to 24,{" "}
+                    <span style={{ fontWeight: "800" }}>
+                      {" "}
+                      is the largest segment.{" "}
+                    </span>
+                  </Typography>
+                </div>
               </div>
             </Fader>
           )}
@@ -283,7 +320,6 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
               <Box
                 onClick={() => {
                   handleNextTypography();
-                  onPlayPause();
                 }}
                 sx={{
                   display: "flex",
@@ -330,7 +366,7 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
             </>
           )}
         </div>
-        {![2, 3, 6].includes(currentTypography) && (
+        {![2, 3, 4, 6].includes(currentTypography) && (
           <Box
             sx={{
               position: "fixed",

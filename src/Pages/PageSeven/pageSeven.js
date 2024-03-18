@@ -23,6 +23,9 @@ import Avatar15 from "../../Audio/Avatar/AVATAR 15.mp3";
 import Avatar16 from "../../Audio/Avatar/AVATAR 16.mp3";
 import Avatar17 from "../../Audio/Avatar/AVATAR 17.mp3";
 import Avatar18 from "../../Audio/Avatar/AVATAR 18.mp3";
+import AvatarExtra1 from "../../Audio/Avatar/AVATAR EXTRA 1 Final.mp3";
+import AvatarExtra2 from "../../Audio/Avatar/AVATAR EXTRA 2 Final.mp3";
+import AvatarExtra3 from "../../Audio/Avatar/AVATAR EXTRA 3 Final.mp3";
 
 import Hope7 from "../../Audio/Hope/HOPE 7.mp3";
 import Hope8 from "../../Audio/Hope/HOPE 8.mp3";
@@ -40,7 +43,7 @@ import PhoneRinging from "../../Audio/SFX/Phone Ringing.mp3";
 import Subtitle from "../../Components/Subtitle";
 import Fader from "../../Components/Fader";
 
-const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
+const PageSeven = ({ userName, onProceed, handlePlayPause, handleOutroPlayPause }) => {
   const [currentTypography, setCurrentTypography] = useState(0);
   const [userChoice, setUserChoice] = useState("Seek");
   const [showChoiceRoute, setShowChoiceRoute] = useState(false);
@@ -51,8 +54,6 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
     }
     setCurrentTypography((currentTypography) => currentTypography + 1);
   };
-
- 
 
   const handleChoice = (choice) => {
     setCurrentTypography(1);
@@ -66,10 +67,11 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
   };
 
   useEffect(() => {
-    if(currentTypography === 17){
+    if (currentTypography === 19) {
       handlePlayPause();
+      handleOutroPlayPause();
     }
-    if (currentTypography === 21) {
+    if (currentTypography === 23) {
       onProceed();
     }
   }, [currentTypography]);
@@ -139,6 +141,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
+                      fontWeight: "400",
                     }}
                     sx={{ fontSize: "24px" }}
                   >
@@ -153,6 +156,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
+                      fontWeight: "400",
                     }}
                     sx={{ fontSize: "24px", px: 5 }}
                   >
@@ -246,8 +250,8 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                       fontWeight: "500",
                     }}
                   >
-                    She loses her appetite, struggles to concentrate <br/> at school,
-                    and withdraws from social activities.
+                    She loses her appetite, struggles to concentrate <br /> at
+                    school, and withdraws from social activities.
                   </Typography>
                 </Fader>
               </Container>
@@ -272,11 +276,12 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Typography>
                 <Button
                   variant="outlined"
-                  sx={{ fontSize: "24px", mt: 4, px: 5}}
+                  sx={{ fontSize: "24px", mt: 4, px: 5 }}
                   style={{
                     boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                     fontFamily: "Figtree",
+                    fontWeight: "400",
                   }}
                   onClick={handleRoute}
                 >
@@ -293,9 +298,9 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
           <div
             style={{
               backgroundImage:
-                currentTypography >= 17
+                currentTypography >= 19
                   ? `url(${Background191E})`
-                  : currentTypography >= 14
+                  : currentTypography >= 16
                   ? `url(${Background191D})`
                   : `url(${Background191A})`,
               backgroundSize: "cover",
@@ -322,7 +327,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                       fontWeight: "500",
                     }}
                   >
-                    {userName}'s' phone buzzes with a message notification.
+                    {userName}'s phone buzzes with a message notification.
                   </Typography>
                   <Typography
                     variant="h4"
@@ -364,7 +369,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography >= 3 && currentTypography < 8 && (
+            {currentTypography >= 3 && currentTypography <= 9 && (
               <>
                 <video
                   autoPlay
@@ -436,13 +441,57 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={6500}
+                  intervalTime={6000}
                 >
-                  <audio src={Sobbing} autoPlay loop={false} controls={false} />
+                  <Subtitle
+                    text={`${userName}: "It's like...I can't escape it, Dr. Faith.” `}
+                  />{" "}
+                  <audio
+                    src={AvatarExtra1}
+                    autoPlay
+                    loop={false}
+                    controls={false}
+                  />
                 </Fader>
               </Container>
             )}
             {currentTypography === 6 && (
+              <Container maxWidth="lg">
+                <Fader
+                  onNextTypography={handleNextTypography}
+                  intervalTime={9500}
+                >
+                  <Subtitle
+                    text={`${userName}: “I feel like they've invaded every part of my life, even my thoughts.”`}
+                  />
+                  <audio
+                    src={AvatarExtra2}
+                    autoPlay
+                    loop={false}
+                    controls={false}
+                  />
+                </Fader>
+              </Container>
+            )}
+            {currentTypography === 7 && (
+              <Container maxWidth="lg">
+                <Fader
+                  onNextTypography={handleNextTypography}
+                  intervalTime={6500}
+                >
+                  <Subtitle
+                    text={`${userName}: “I thought I was doing fine, but now…What do I do?"`}
+                  />
+                  <audio
+                    src={AvatarExtra3}
+                    autoPlay
+                    loop={false}
+                    controls={false}
+                  />
+                </Fader>
+              </Container>
+            )}
+            {currentTypography === 8 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -455,7 +504,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 7 && (
+            {currentTypography === 9 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -469,7 +518,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography >= 8 && currentTypography <= 13 && (
+            {currentTypography >= 10 && currentTypography <= 15 && (
               <>
                 <video
                   autoPlay
@@ -491,7 +540,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </video>
               </>
             )}
-            {currentTypography === 8 && (
+            {currentTypography === 10 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -509,6 +558,15 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                     After {userName}’s therapy session, she calls her friend,
                     Hope.
                   </Typography>
+                </Fader>
+              </Container>
+            )}
+            {currentTypography === 11 && (
+              <Container maxWidth="lg">
+                <Fader
+                  onNextTypography={handleNextTypography}
+                  intervalTime={3000}
+                >
                   <audio
                     src={PhoneRinging}
                     autoPlay
@@ -518,7 +576,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 9 && (
+            {currentTypography === 12 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -532,22 +590,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 10 && (
-              <Container maxWidth="lg">
-                <Fader
-                  onNextTypography={handleNextTypography}
-                  intervalTime={5000}
-                >
-                  <audio
-                    src={Sobbing2}
-                    autoPlay
-                    loop={false}
-                    controls={false}
-                  />
-                </Fader>
-              </Container>
-            )}
-            {currentTypography === 11 && (
+            {currentTypography === 13 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -561,7 +604,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 12 && (
+            {currentTypography === 14 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -580,7 +623,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 13 && (
+            {currentTypography === 15 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -599,7 +642,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 14 && (
+            {currentTypography === 16 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -620,21 +663,21 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 15 && (
+            {currentTypography === 17 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
                   intervalTime={6000}
                 >
                   <Subtitle
-                    text={`Dr Faith: “You're making significant progress, I'm proud of how far you've come.”
+                    text={`Dr. Faith: “You're making significant progress, I'm proud of how far you've come.”
                   `}
                   />
                   <audio src={Faith4} autoPlay loop={false} controls={false} />
                 </Fader>
               </Container>
             )}
-            {currentTypography === 16 && (
+            {currentTypography === 18 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -648,7 +691,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 17 && (
+            {currentTypography === 19 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -669,7 +712,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 18 && (
+            {currentTypography === 20 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -688,7 +731,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 19 && (
+            {currentTypography === 21 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -707,7 +750,7 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 20 && (
+            {currentTypography === 22 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -734,9 +777,9 @@ const PageSeven = ({ userName, onProceed, handlePlayPause }) => {
         !(userChoice === "Ignore" && currentTypography === 2) &&
         !(
           userChoice === "Seek" &&
-          [2, 4, 5, 6, 7, 9, 10, 11, 12, 13, 15, 16, 18, 19, 20].includes(
-            currentTypography
-          )
+          [
+            2, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 17, 18, 20, 21, 22,
+          ].includes(currentTypography)
         ) && (
           <Box
             sx={{

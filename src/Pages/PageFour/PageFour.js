@@ -5,7 +5,7 @@ import "./styles.css";
 import { Typography, Button, Box, Grid, Container } from "@mui/material";
 
 import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
-import Background from "../../Backgrounds/Slide11-12.png";
+
 import Background12 from "../../Backgrounds/12.png";
 import Background2 from "../../Backgrounds/Slide13.jpg";
 import Background14A from "../../Backgrounds/14.1A.png";
@@ -13,8 +13,6 @@ import Background14C from "../../Backgrounds/14.1C.png";
 import Background142A from "../../Backgrounds/14.2A.png";
 import Background142B from "../../Backgrounds/14.2B.png";
 import Background142D from "../../Backgrounds/14.2D.png";
-import Statistics2 from "../../Statistics/Statistics-Visualizers-02.png";
-import Statistics3 from "../../Statistics/Statistics-Visualizers-03.png";
 
 import Avatar1 from "../../Audio/Avatar/AVATAR 1.mp3";
 import Avatar2 from "../../Audio/Avatar/AVATAR 2.mp3";
@@ -65,10 +63,64 @@ const PageFour = ({ userName, onProceed }) => {
         }}
       >
         {currentTypography === 0 && (
-          <Fader onNextTypography={handleNextTypography} intervalTime={70000}>
-            <div className="image-container">
-              {" "}
-              <img src={Statistics2} />
+          <Fader onNextTypography={handleNextTypography} intervalTime={4000}>
+            <div
+              className="typewriter-container"
+              style={{
+                backgroundImage: `url(${WhiteGrunge})`,
+              }}
+            >
+              <Container maxWidth="lg">
+                <Typography
+                  variant="h4"
+                  style={{
+                    backgroundColor: "red",
+                    width: "30%",
+                    boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.5)",
+                  }}
+                  sx={{
+                    fontFamily: "Figtree",
+                    fontWeight: "900",
+                    color: "white",
+                    mx: "auto",
+                    py: 0.5
+                  }}
+                >
+                  DID YOU KNOW?
+                </Typography>
+
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontFamily: "Figtree",
+                    fontWeight: "500",
+                    color: "black",
+                    mt: 3,
+                  }}
+                >
+                  Nearly
+                  <span style={{ fontWeight: "bolder" }}>
+                    {" "}
+                    7 in 10 girls and young women in the Philippines
+                  </span>{" "}
+                  <br />
+                  have experienced harassment on social media.
+                </Typography>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontFamily: "Figtree",
+                    fontWeight: "500",
+                    color: "black",
+                    mt: 3,
+                  }}
+                >
+                  <span style={{ fontWeight: "bolder" }}>
+                    {" "}
+                    These harassments happen frequently.
+                  </span>
+                </Typography>
+              </Container>
             </div>
           </Fader>
         )}
@@ -277,6 +329,7 @@ const PageFour = ({ userName, onProceed }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
+                      fontWeight: "400",
                     }}
                     sx={{ fontSize: "24px" }}
                   >
@@ -291,6 +344,7 @@ const PageFour = ({ userName, onProceed }) => {
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
+                      fontWeight: "400",
                     }}
                     sx={{ fontSize: "24px", px: 4 }}
                   >
@@ -302,10 +356,48 @@ const PageFour = ({ userName, onProceed }) => {
           </div>
         )}
         {currentTypography === 7 && (
-          <Fader onNextTypography={handleNextTypography} intervalTime={8000000}>
-            <div className="image-container">
-              {" "}
-              <img src={Statistics3} />
+          <Fader onNextTypography={handleNextTypography} intervalTime={4000}>
+            <div
+              className="typewriter-container"
+              style={{
+                backgroundImage: `url(${WhiteGrunge})`,
+              }}
+            >
+              <Container maxWidth="lg">
+                <Typography
+                  variant="h4"
+                  style={{
+                    backgroundColor: "red",
+                    width: "13%",
+                    boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.5)",
+                  }}
+                  sx={{
+                    fontFamily: "Figtree",
+                    fontWeight: "900",
+                    color: "white",
+                    mx: "auto",
+                    py: 0.5
+                  }}
+                >
+                  FACT
+                </Typography>
+
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontFamily: "Figtree",
+                    fontWeight: "500",
+                    color: "black",
+                    mt: 3,
+                  }}
+                >
+                  Research proves that
+                  <span style={{ fontWeight: "800" }}>
+                    {" "}
+                    ignoring harassment <br/> doesn't stop it.
+                  </span>
+                </Typography>
+              </Container>
             </div>
           </Fader>
         )}
@@ -463,7 +555,7 @@ const PageFour = ({ userName, onProceed }) => {
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                         fontFamily: "Figtree",
                         fontWeight: "500",
-                        mt: 3
+                        mt: 3,
                       }}
                     >
                       With a newfound determination, she feels it is time to
@@ -617,6 +709,7 @@ const PageFour = ({ userName, onProceed }) => {
                         boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                         fontFamily: "Figtree",
+                        fontWeight: "400",
                       }}
                       onClick={handleRoute}
                     >
@@ -630,7 +723,7 @@ const PageFour = ({ userName, onProceed }) => {
         )}
       </div>
 
-      {(![4, 6, 8, 11].includes(currentTypography) ||
+      {(![0, 4, 6, 7, 8, 11].includes(currentTypography) ||
         (currentTypography === 11 && userChoice === "Report")) && (
         <Box
           sx={{
