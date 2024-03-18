@@ -44,7 +44,7 @@ const PageSix = ({ userName, onProceed }) => {
   };
 
   useEffect(() => {
-    if (currentTypography === 7 && userChoice === "Reach") {
+    if (currentTypography === 6 && userChoice === "Reach") {
       onProceed();
     }
   }, [currentTypography]);
@@ -82,6 +82,7 @@ const PageSix = ({ userName, onProceed }) => {
                 sx={{
                   color: "#ffee1a",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  fontFamily: "Figtree",
                   fontWeight: "bold",
                 }}
                 gutterBottom
@@ -95,6 +96,9 @@ const PageSix = ({ userName, onProceed }) => {
                 sx={{
                   color: "white",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  fontFamily: "Figtree",
+                  fontWeight: "500",
+                  mt: 4,
                 }}
                 gutterBottom
               >
@@ -111,9 +115,9 @@ const PageSix = ({ userName, onProceed }) => {
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                     }}
-                    sx={{ fontSize: "24px" }}
+                    sx={{ fontSize: "24px", px: 10 }}
                   >
-                    “Reach out to a professional”
+                    Reach out to <br /> a professional
                   </Button>
                 </Grid>
                 <Grid item md={12} lg={6}>
@@ -127,7 +131,7 @@ const PageSix = ({ userName, onProceed }) => {
                     }}
                     sx={{ fontSize: "24px", px: 5 }}
                   >
-                    “Convince herself that she can do this alone”
+                    Convince herself that <br /> she can do this alone
                   </Button>
                 </Grid>
               </Grid>
@@ -165,13 +169,15 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 2 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={100000000}
                 >
                   <Typography
                     variant="h4"
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
                     {userName}'s friends notice her withdrawal and express
@@ -183,7 +189,7 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 3 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={8000}
+                  intervalTime={6000}
                 >
                   <Subtitle
                     text={`Hope:“I'm worried about you. You don't seem like yourself lately.”`}
@@ -194,7 +200,7 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 4 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={7000}
                 >
                   <Subtitle
                     text={`${userName}: “I appreciate your concern, but yeah, there's really nothing to worry about.”`}
@@ -205,7 +211,7 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 5 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={8000}
                 >
                   <Subtitle
                     text={`${userName}: “I'll need some time to figure things out, but I’ll find my way back soon enough.”`}
@@ -222,17 +228,20 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 6 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={1000000000}
                 >
                   <Typography
                     variant="h4"
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
                     {userName}’s symptoms escalate to a breaking point, and she
-                    finds herself overwhelmed by intense panic attacks and
+                    finds
+                    <br /> herself overwhelmed by intense panic attacks and
                     feelings of despair.
                   </Typography>
                 </Fader>
@@ -240,12 +249,12 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 7 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={15000}
+                  intervalTime={13000}
                 >
                   <Subtitle
                     text={`${userName}: “I can't do this anymore. I've been pretending for too long. I need help.”`}
                   />
-                        <audio
+                  <audio
                     src={Avatar11}
                     autoPlay
                     loop={false}
@@ -263,6 +272,8 @@ const PageSix = ({ userName, onProceed }) => {
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                     gutterBottom
                   >
@@ -270,7 +281,7 @@ const PageSix = ({ userName, onProceed }) => {
                   </Typography>
                   <Button
                     variant="outlined"
-                    sx={{ fontSize: "24px" }}
+                    sx={{ fontSize: "24px", mt: 3 }}
                     style={{
                       boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
@@ -305,21 +316,38 @@ const PageSix = ({ userName, onProceed }) => {
               {currentTypography === 2 && (
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={1000000000}
                 >
                   <Typography
                     variant="h4"
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                     gutterBottom
                   >
                     {userName} sits nervously in online therapy and opens up
                     about her struggles.
                   </Typography>
+
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      color: "white",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
+                      mt: 3,
+                    }}
+                  >
+                    The therapist, Dr. Faith, listens attentively as {userName}{" "}
+                    shares her experiences.
+                  </Typography>
                 </Fader>
               )}
+
               {currentTypography === 3 && (
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -330,23 +358,8 @@ const PageSix = ({ userName, onProceed }) => {
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                    }}
-                  >
-                    The therapist, Dr. Faith, listens attentively as {userName}{" "}
-                    shares her experiences.
-                  </Typography>
-                </Fader>
-              )}
-              {currentTypography === 4 && (
-                <Fader
-                  onNextTypography={handleNextTypography}
-                  intervalTime={10000}
-                >
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      color: "white",
-                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
                     Dr. Faith discusses various treatment options with{" "}
@@ -356,7 +369,7 @@ const PageSix = ({ userName, onProceed }) => {
                 </Fader>
               )}
 
-              {currentTypography >= 5 && (
+              {currentTypography >= 4 && (
                 <>
                   <video
                     autoPlay
@@ -378,7 +391,7 @@ const PageSix = ({ userName, onProceed }) => {
                   </video>
                 </>
               )}
-              {currentTypography === 5 && (
+              {currentTypography === 4 && (
                 <Fader
                   onNextTypography={handleNextTypography}
                   intervalTime={10000000}
@@ -388,6 +401,8 @@ const PageSix = ({ userName, onProceed }) => {
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
                     But {userName}’s journey towards healing is not without its
@@ -396,7 +411,7 @@ const PageSix = ({ userName, onProceed }) => {
                   </Typography>
                 </Fader>
               )}
-              {currentTypography === 6 && (
+              {currentTypography === 5 && (
                 <Fader
                   onNextTypography={handleNextTypography}
                   intervalTime={10000}
@@ -416,7 +431,7 @@ const PageSix = ({ userName, onProceed }) => {
         !(
           (userChoice === "Convince" &&
             [3, 4, 5, 7, 8].includes(currentTypography)) ||
-          (userChoice === "Reach" && currentTypography === 6)
+          (userChoice === "Reach" && currentTypography === 5)
         ) && (
           <Box
             sx={{

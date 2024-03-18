@@ -130,30 +130,37 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
                   <Typography
                     variant="h4"
                     gutterBottom
-                    sx={{ fontFamily: "Figtree" }}
+                    sx={{ fontFamily: "Figtree", fontWeight: "500" }}
                   >
                     Here she is.
                   </Typography>
                   <Typography
                     variant="h4"
                     gutterBottom
-                    sx={{ fontFamily: "Figtree" }}
+                    sx={{ fontFamily: "Figtree", fontWeight: "500" }}
                   >
                     What's her name?
                   </Typography>
                   <TextField
-                    style={{ backgroundColor: "white", borderRadius: "5px" }}
+                    style={{
+                      backgroundColor: "white",
+                      borderRadius: "5px",
+                      width: "50%",
+                      textAlign: "center",
+                    }}
                     placeholder="Enter her name here"
                     variant="outlined"
-                    fullWidth
                     required
                     margin="normal"
                     onChange={(e) => setName(e.target.value)}
                   />
+
                   <Button
-                    type="submit" // Set button type to "submit"
+                    type="submit"
                     variant="outlined"
                     sx={{
+                      display: "block",
+                      mx: "auto",
                       color: "#4CAF50",
                       borderColor: "white",
                       "&:hover": {
@@ -163,8 +170,9 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
                       },
                     }}
                     style={{
-                      marginTop: "10px",
+                      marginTop: "18px",
                       borderRadius: "15px",
+                      fontSize: "18px",
                       fontFamily: "Figtree",
                       color: "white",
                     }}
@@ -213,15 +221,15 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
 
         <div style={{ textAlign: "center" }}>
           {currentTypography === 5 && (
-            <div
-              className="typewriter-container"
-              style={{
-                backgroundImage: `url(${WhiteGrunge})`,
-              }}
+            <Fader
+              onNextTypography={handleNextTypography}
+              intervalTime={70000000}
             >
-              <Fader
-                onNextTypography={handleNextTypography}
-                intervalTime={70000000}
+              <div
+                className="typewriter-container"
+                style={{
+                  backgroundImage: `url(${WhiteGrunge})`,
+                }}
               >
                 <div>
                   <Typography
@@ -231,8 +239,8 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
                     {userName} belongs to this demographic.
                   </Typography>
                 </div>
-              </Fader>
-            </div>
+              </div>
+            </Fader>
           )}
         </div>
 
@@ -263,7 +271,8 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
               <Typography
                 variant="h4"
                 sx={{
-                  fontFamily: "Work Sans",
+                  fontFamily: "Figtree",
+                  fontWeight: "500",
                   color: "white",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                   mb: 4,
@@ -309,7 +318,8 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
                   sx={{
                     color: "white",
                     mt: 4,
-                    fontFamily: "Work Sans",
+                    fontFamily: "Figtree",
+                    fontWeight: "500",
                     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                   }}
                 >

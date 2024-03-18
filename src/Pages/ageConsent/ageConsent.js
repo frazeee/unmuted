@@ -26,21 +26,20 @@ const AgeConsent = ({ onProceed }) => {
         <Container lg>
           <Grid>
             <Box sx={{ textAlign: "center" }}>
-              <Typography variant="h4" gutterBottom  sx={{fontFamily:"Figtree"}}>
+              <Typography variant="h4" gutterBottom  sx={{fontFamily:"Figtree", fontWeight: "500"}}>
                 <div className="">
                 This website contains content suitable for individuals
                 <strong> aged 18 and above.</strong> By proceeding, you confirm
                 that you are the required age.
                 </div>
               </Typography>
-              <Typography variant="h6" gutterBottom sx={{fontFamily:"Figtree"}}>
-                Please click the button to continue.
-              </Typography>
+        
               <Button
                 variant="contained"
                 color="primary"
                 onClick={onProceed}
                 sx={{
+                  fontSize: "24px",
                   marginTop: "10px",
                   backgroundColor: "black",
                   color: "white",

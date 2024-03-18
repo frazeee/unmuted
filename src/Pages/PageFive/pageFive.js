@@ -16,7 +16,7 @@ import BackgroundVideo from "../../Backgrounds/Slide15.mp4";
 import Background161A from "../../Backgrounds/16.1A.png";
 import Background161B from "../../Backgrounds/16.1B.png";
 import Background161C from "../../Backgrounds/16.1C.png";
-import Background162A from "../../Backgrounds/16.2A.png";
+import Background162A from "../../Backgrounds/16.2A.mp4";
 import Background162B from "../../Backgrounds/16.2B.png";
 import Statistics4 from "../../Statistics/Statistics-Visualizers-04.png";
 
@@ -30,6 +30,7 @@ import Hope3 from "../../Audio/Hope/HOPE 3.mp3";
 import Hope4 from "../../Audio/Hope/HOPE 4.mp3";
 import Hope5 from "../../Audio/Hope/HOPE 5.mp3";
 import PhoneRinging from "../../Audio/SFX/Phone Ringing.mp3";
+import PhoneEnding from "../../Audio/SFX/Phone Ending.mp3";
 
 import Subtitle from "../../Components/Subtitle";
 import Fader from "../../Components/Fader";
@@ -48,7 +49,7 @@ const PageFive = ({ userName, onProceed }) => {
   };
 
   useEffect(() => {
-    if (currentTypography === 13) {
+    if (currentTypography === 14) {
       onProceed();
     }
   }, [currentTypography]);
@@ -106,8 +107,11 @@ const PageFive = ({ userName, onProceed }) => {
           <Typography
             variant="h4"
             sx={{
+              mt: 4,
               color: "white",
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+              fontFamily: "Figtree",
+              fontWeight: "500",
             }}
             gutterBottom
           >
@@ -125,7 +129,8 @@ const PageFive = ({ userName, onProceed }) => {
                 sx={{ fontSize: "24px", mx: 5, fontWeight: "bold" }}
                 onClick={() => handleChoice("Keep")}
               >
-                “Keep it to yourself. Your life will be peaceful that way.”
+                “Keep it to yourself. <br /> Your life will be peaceful that
+                way.”
               </Button>
             </Grid>
             <Grid item md={12} lg={6}>
@@ -139,8 +144,8 @@ const PageFive = ({ userName, onProceed }) => {
                 sx={{ fontSize: "24px", mx: 5, fontWeight: "bold" }}
                 onClick={() => handleChoice("Tell")}
               >
-                “You don't have to go through this alone. It’s time to tell
-                someone.”
+                “You don't have to go through this alone.
+                <br /> It’s time to tell someone.”
               </Button>
             </Grid>
           </Grid>
@@ -190,6 +195,8 @@ const PageFive = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
                     >
                       {userName} contemplating reaching out to her friend, Hope,
@@ -223,9 +230,22 @@ const PageFive = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
                     >
                       As time passes, {userName} battles the pain in silence.
+                    </Typography>
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        mt: 3,
+                        color: "white",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
+                      }}
+                    >
                       She feels isolated and alone, unable to share her
                       experiences with anyone.
                     </Typography>
@@ -241,15 +261,30 @@ const PageFive = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
                       gutterBottom
                     >
-                      {userName} reflects on her decision. She wonders what
-                      might happen if she reaches out to her friend, Hope.
+                      {userName} reflects on her decision.
+                    </Typography>
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        mt: 3,
+                        color: "white",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
+                      }}
+                      gutterBottom
+                    >
+                      She wonders what might happen if she reaches out to her
+                      friend, Hope.
                     </Typography>
                     <Button
                       variant="outlined"
-                      sx={{ fontSize: "24px" }}
+                      sx={{ fontSize: "24px", mt: 3 }}
                       style={{
                         boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
@@ -273,7 +308,7 @@ const PageFive = ({ userName, onProceed }) => {
           <div
             style={{
               backgroundImage:
-                currentTypography >= 10
+                currentTypography >= 11
                   ? `url(${Background162B})`
                   : `url(${Background162A})`,
               backgroundSize: "cover",
@@ -297,6 +332,8 @@ const PageFive = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
                     >
                       {userName} hesitates, staring at her phone, before finally
@@ -306,12 +343,34 @@ const PageFive = ({ userName, onProceed }) => {
                 </Container>
               </div>
             )}
+            {currentTypography >= 2 && currentTypography <= 10 && (
+              <>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    top: "50%",
+                    left: "50%",
+                    transform: " translate(-50%, -50%)",
+                    zIndex: -1,
+                  }}
+                >
+                  <source src={Background162A} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </>
+            )}
             {currentTypography === 3 && (
               <div className="fade-in" style={{ textAlign: "center" }}>
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={9000}
+                    intervalTime={7500}
                   >
                     <audio
                       src={PhoneRinging}
@@ -330,7 +389,7 @@ const PageFive = ({ userName, onProceed }) => {
                     onNextTypography={handleNextTypography}
                     intervalTime={3000}
                   >
-                    <Subtitle text={`Hope: “Hey ${userName}? What’s up?”`} />
+                    <Subtitle text={`Hope: “Hey, What’s up?”`} />
                     <audio src={Hope1} autoPlay loop={false} controls={false} />
                   </Fader>
                 </Container>
@@ -361,7 +420,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={10500}
                   >
                     <Subtitle
                       text={`“${userName}:  It's... it's because of my past traumas. I don't know how to deal with it alone anymore.”`}
@@ -381,10 +440,10 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={9000}
+                    intervalTime={7000}
                   >
                     <Subtitle
-                      text={`“Hope: ${userName},  I'm so sorry you've been going through this alone. But I'm here for you, always.”`}
+                      text={`“Hope: I'm so sorry you've been going through this alone. But I'm here for you, always.”`}
                     />
                     <audio src={Hope2} autoPlay loop={false} controls={false} />
                   </Fader>
@@ -396,7 +455,7 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={10000}
+                    intervalTime={7000}
                   >
                     <Subtitle
                       text={`“Hope:  You don't have to carry this burden by yourself. Let's figure out a way forward together.”`}
@@ -431,19 +490,14 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={1000000}
+                    intervalTime={1500}
                   >
-                    <Typography
-                      variant="h4"
-                      sx={{
-                        color: "white",
-                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                      }}
-                    >
-                      {userName} begins to open up to Hope about the depth of
-                      her struggles. With Hope's support and understanding,
-                      Rachel feels a weight lifting off her shoulders.
-                    </Typography>
+                    <audio
+                      src={PhoneEnding}
+                      autoPlay
+                      loop={false}
+                      controls={false}
+                    />
                   </Fader>
                 </Container>
               </div>
@@ -453,7 +507,44 @@ const PageFive = ({ userName, onProceed }) => {
                 <Container maxWidth="md">
                   <Fader
                     onNextTypography={handleNextTypography}
-                    intervalTime={7000}
+                    intervalTime={1000000}
+                  >
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        ml: -10,
+                        color: "white",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
+                        textWrap: "nowrap"
+                      }}
+                    >
+                      {userName} begins to open up to Hope about the depth of her struggles.
+                    </Typography>
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        mt: 4,
+                        color: "white",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500"
+                      }}
+                    >
+                      With Hope's support and understanding, Rachel feels a
+                      weight lifting off her shoulders.
+                    </Typography>
+                  </Fader>
+                </Container>
+              </div>
+            )}
+            {currentTypography === 12 && (
+              <div className="fade-in" style={{ textAlign: "center" }}>
+                <Container maxWidth="md">
+                  <Fader
+                    onNextTypography={handleNextTypography}
+                    intervalTime={5000}
                   >
                     <Subtitle
                       text={`“Hope: You're incredibly brave for opening up like this.”`}
@@ -463,7 +554,7 @@ const PageFive = ({ userName, onProceed }) => {
                 </Container>
               </div>
             )}
-            {currentTypography === 12 && (
+            {currentTypography === 13 && (
               <div className="fade-in" style={{ textAlign: "center" }}>
                 <Container maxWidth="md">
                   <Fader
@@ -485,7 +576,7 @@ const PageFive = ({ userName, onProceed }) => {
       {![0, 3, 5].includes(currentTypography) &&
         !(
           userChoice === "Tell" &&
-          [4, 5, 6, 7, 8, 9, 11, 12].includes(currentTypography)
+          [4, 5, 6, 7, 8, 9, 10, 12, 13].includes(currentTypography)
         ) && (
           <Box
             sx={{

@@ -33,7 +33,8 @@ import Faith2 from "../../Audio/DrFaith/DR FAITH 2.mp3";
 import Faith3 from "../../Audio/DrFaith/DR FAITH 3.mp3";
 import Faith4 from "../../Audio/DrFaith/DR FAITH 4.mp3";
 
-import Sobbing from "../../Audio/SFX/Woman Sobbing.mp3";
+import Sobbing from "../../Audio/SFX/AVATAR SOBBING 1.mp3";
+import Sobbing2 from "../../Audio/SFX/AVATAR SOBBING 2.mp3";
 import PhoneRinging from "../../Audio/SFX/Phone Ringing.mp3";
 
 import Subtitle from "../../Components/Subtitle";
@@ -65,7 +66,7 @@ const PageSeven = ({ userName, onProceed }) => {
   };
 
   useEffect(() => {
-    if (currentTypography === 22) {
+    if (currentTypography === 21) {
       onProceed();
     }
   }, [currentTypography]);
@@ -103,6 +104,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 sx={{
                   color: "#ffee1a",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  fontFamily: "Figtree",
                   fontWeight: "bold",
                 }}
                 gutterBottom
@@ -114,8 +116,11 @@ const PageSeven = ({ userName, onProceed }) => {
               <Typography
                 variant="h4"
                 sx={{
+                  mt: 4,
                   color: "white",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  fontFamily: "Figtree",
+                  fontWeight: "500",
                 }}
                 gutterBottom
               >
@@ -134,7 +139,7 @@ const PageSeven = ({ userName, onProceed }) => {
                     }}
                     sx={{ fontSize: "24px" }}
                   >
-                    Seeks immediate support
+                    Seek immediate support
                   </Button>
                 </Grid>
                 <Grid item md={12} lg={6}>
@@ -181,16 +186,19 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={10000000000}
                 >
                   <Typography
                     variant="h4"
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
                     {userName} experiences symptoms of anxiety and depression.
+                    <br />
                     She brushes them off, convincing herself that it's just a
                     phase.
                   </Typography>
@@ -209,6 +217,39 @@ const PageSeven = ({ userName, onProceed }) => {
               </Fader>
             )}
             {currentTypography === 3 && (
+              <Container maxWidth="lg">
+                <Fader
+                  onNextTypography={handleNextTypography}
+                  intervalTime={10000000000}
+                >
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      color: "white",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
+                    }}
+                  >
+                    As time passes, {userName}’s symptoms worsen.
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      mt: 3,
+                      color: "white",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
+                    }}
+                  >
+                    She loses her appetite, struggles to concentrate at school,
+                    and withdraws from social activities.
+                  </Typography>
+                </Fader>
+              </Container>
+            )}
+            {currentTypography === 4 && (
               <Fader
                 onNextTypography={handleNextTypography}
                 intervalTime={1000000}
@@ -218,14 +259,17 @@ const PageSeven = ({ userName, onProceed }) => {
                   sx={{
                     color: "white",
                     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                    fontFamily: "Figtree",
+                    fontWeight: "500",
                   }}
                   gutterBottom
                 >
-                  {userName} realizes that she can no longer do this alone.
+                  In a moment of clarity, {userName} realizes she can no longer
+                  ignore her symptoms.
                 </Typography>
                 <Button
                   variant="outlined"
-                  sx={{ fontSize: "24px" }}
+                  sx={{ fontSize: "24px", mt: 4, px: 5}}
                   style={{
                     boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
@@ -233,7 +277,7 @@ const PageSeven = ({ userName, onProceed }) => {
                   }}
                   onClick={handleRoute}
                 >
-                  Reach out to a professional
+                  SEEK IMMEDIATE HELP
                 </Button>
               </Fader>
             )}
@@ -246,9 +290,9 @@ const PageSeven = ({ userName, onProceed }) => {
           <div
             style={{
               backgroundImage:
-                currentTypography >= 18
+                currentTypography >= 17
                   ? `url(${Background191E})`
-                  : currentTypography >= 15
+                  : currentTypography >= 14
                   ? `url(${Background191D})`
                   : `url(${Background191A})`,
               backgroundSize: "cover",
@@ -264,8 +308,32 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={4000}
+                  intervalTime={10000000}
                 >
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      color: "white",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {userName}'s' phone buzzes with a message notification.
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      mt: 4,
+                      color: "white",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
+                    }}
+                  >
+                    She picks it up to see a reminder for her therapy <br />
+                    appointment later in the week.
+                  </Typography>
                   <audio
                     src={Notification}
                     autoPlay
@@ -279,27 +347,7 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000000}
-                >
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      color: "white",
-                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                    }}
-                  >
-                    {userName}'s' phone buzzes with a message notification. She
-                    picks it up to see a reminder for her therapy appointment
-                    later in the week.
-                  </Typography>
-                </Fader>
-              </Container>
-            )}
-            {currentTypography === 3 && (
-              <Container maxWidth="lg">
-                <Fader
-                  onNextTypography={handleNextTypography}
-                  intervalTime={8000}
+                  intervalTime={5000}
                 >
                   <Subtitle
                     text={`${userName}: “Maybe I should reach out sooner…”`}
@@ -313,7 +361,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography >= 4 && currentTypography < 9 && (
+            {currentTypography >= 3 && currentTypography < 8 && (
               <>
                 <video
                   autoPlay
@@ -335,7 +383,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </video>
               </>
             )}
-            {currentTypography === 4 && (
+            {currentTypography === 3 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -346,11 +394,38 @@ const PageSeven = ({ userName, onProceed }) => {
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
-                    {userName} sits in front of her laptop, her therapist's face
-                    on the screen. She looks relieved to see her.
+                    {userName} sits in front of her laptop,
+                    <br /> her therapist's face on the screen.
                   </Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      mt: 4,
+                      color: "white",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
+                    }}
+                  >
+                    She looks relieved to see her.
+                  </Typography>
+                </Fader>
+              </Container>
+            )}
+            {currentTypography === 4 && (
+              <Container maxWidth="lg">
+                <Fader
+                  onNextTypography={handleNextTypography}
+                  intervalTime={6000}
+                >
+                  <Subtitle
+                    text={`Dr. Faith: “I'm glad you reached out. Tell me what's been going on.”`}
+                  />
+                  <audio src={Faith1} autoPlay loop={false} controls={false} />
                 </Fader>
               </Container>
             )}
@@ -358,12 +433,9 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={6000}
+                  intervalTime={6500}
                 >
-                  <Subtitle
-                    text={`Dr. Faith: “${userName}, I'm glad you reached out. Tell me what's been going on.”`}
-                  />
-                  <audio src={Faith1} autoPlay loop={false} controls={false} />
+                  <audio src={Sobbing} autoPlay loop={false} controls={false} />
                 </Fader>
               </Container>
             )}
@@ -371,17 +443,7 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
-                >
-                  <audio src={Sobbing} autoPlay loop={false} controls={false} />
-                </Fader>
-              </Container>
-            )}
-            {currentTypography === 7 && (
-              <Container maxWidth="lg">
-                <Fader
-                  onNextTypography={handleNextTypography}
-                  intervalTime={8000}
+                  intervalTime={6000}
                 >
                   <Subtitle
                     text={`Dr. Faith: “It sounds like you're recognizing the signs of a relapse early.”`}
@@ -390,11 +452,11 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 8 && (
+            {currentTypography === 7 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={8000}
+                  intervalTime={7000}
                 >
                   <Subtitle
                     text={`Dr. Faith: “That's a significant step. Let's work together to address this.”
@@ -404,7 +466,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography >= 9 && currentTypography <= 14 && (
+            {currentTypography >= 8 && currentTypography <= 13 && (
               <>
                 <video
                   autoPlay
@@ -426,7 +488,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </video>
               </>
             )}
-            {currentTypography === 9 && (
+            {currentTypography === 8 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -437,11 +499,33 @@ const PageSeven = ({ userName, onProceed }) => {
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
                     After {userName}’s therapy session, she calls her friend,
                     Hope.
                   </Typography>
+                  <audio
+                    src={PhoneRinging}
+                    autoPlay
+                    loop={false}
+                    controls={false}
+                  />
+                </Fader>
+              </Container>
+            )}
+            {currentTypography === 9 && (
+              <Container maxWidth="lg">
+                <Fader
+                  onNextTypography={handleNextTypography}
+                  intervalTime={5000}
+                >
+                  <Subtitle
+                    text={`Hope: “Hey I'm here for you. Whatever you need.”
+                  `}
+                  />
+                  <audio src={Hope7} autoPlay loop={false} controls={false} />
                 </Fader>
               </Container>
             )}
@@ -449,10 +533,10 @@ const PageSeven = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={3500}
+                  intervalTime={5000}
                 >
                   <audio
-                    src={PhoneRinging}
+                    src={Sobbing2}
                     autoPlay
                     loop={false}
                     controls={false}
@@ -467,20 +551,6 @@ const PageSeven = ({ userName, onProceed }) => {
                   intervalTime={5000}
                 >
                   <Subtitle
-                    text={`Hope: “Hey I'm here for you. Whatever you need.”
-                  `}
-                  />
-                  <audio src={Hope7} autoPlay loop={false} controls={false} />
-                </Fader>
-              </Container>
-            )}
-            {currentTypography === 12 && (
-              <Container maxWidth="lg">
-                <Fader
-                  onNextTypography={handleNextTypography}
-                  intervalTime={5000}
-                >
-                  <Subtitle
                     text={`Hope: “Have you talked to your therapist?”
                   `}
                   />
@@ -488,7 +558,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 13 && (
+            {currentTypography === 12 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -507,7 +577,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 14 && (
+            {currentTypography === 13 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -526,7 +596,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 15 && (
+            {currentTypography === 14 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -537,6 +607,8 @@ const PageSeven = ({ userName, onProceed }) => {
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
                     The healing journey hasn't been easy, but {userName} is
@@ -545,11 +617,11 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 16 && (
+            {currentTypography === 15 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={8000}
                 >
                   <Subtitle
                     text={`Dr Faith: “You're making significant progress, ${userName}. I'm proud of how far you've come.”
@@ -559,7 +631,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 17 && (
+            {currentTypography === 16 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -573,7 +645,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 18 && (
+            {currentTypography === 17 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -584,6 +656,8 @@ const PageSeven = ({ userName, onProceed }) => {
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
                     {userName} is ready to let go of the past and step into the
@@ -592,7 +666,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 19 && (
+            {currentTypography === 18 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -611,11 +685,11 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 20 && (
+            {currentTypography === 19 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={9000}
                 >
                   <Subtitle
                     text={`${userName}: “Every step of the way, I've discovered strength I never knew I had."
@@ -630,7 +704,7 @@ const PageSeven = ({ userName, onProceed }) => {
                 </Fader>
               </Container>
             )}
-            {currentTypography === 21 && (
+            {currentTypography === 20 && (
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
@@ -653,13 +727,13 @@ const PageSeven = ({ userName, onProceed }) => {
         </>
       )}
 
-      {![0, 3].includes(currentTypography) &&
+      {![0, 4].includes(currentTypography) &&
         !(userChoice === "Ignore" && currentTypography === 2) &&
         !(
           userChoice === "Seek" &&
-          [
-            1, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 16, 17, 19, 20, 21,
-          ].includes(currentTypography)
+          [2, 4, 5, 6, 7, 9, 10, 11, 12, 13, 15, 16, 18, 19, 20].includes(
+            currentTypography
+          )
         ) && (
           <Box
             sx={{

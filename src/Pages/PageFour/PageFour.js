@@ -6,6 +6,7 @@ import { Typography, Button, Box, Grid, Container } from "@mui/material";
 
 import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
 import Background from "../../Backgrounds/Slide11-12.png";
+import Background12 from "../../Backgrounds/12.png";
 import Background2 from "../../Backgrounds/Slide13.jpg";
 import Background14A from "../../Backgrounds/14.1A.png";
 import Background14C from "../../Backgrounds/14.1C.png";
@@ -73,15 +74,15 @@ const PageFour = ({ userName, onProceed }) => {
         )}
 
         {currentTypography === 1 && (
-          <div
-            className="typewriter-container"
-            style={{
-              backgroundImage: `url(${WhiteGrunge})`,
-            }}
+          <Fader
+            onNextTypography={handleNextTypography}
+            intervalTime={70000000}
           >
-            <Fader
-              onNextTypography={handleNextTypography}
-              intervalTime={70000000}
+            <div
+              className="typewriter-container"
+              style={{
+                backgroundImage: `url(${WhiteGrunge})`,
+              }}
             >
               <div>
                 <Typography
@@ -91,26 +92,28 @@ const PageFour = ({ userName, onProceed }) => {
                   Sadly, {userName} is one of them, and her past haunts her.
                 </Typography>
               </div>
-            </Fader>
-          </div>
+            </div>
+          </Fader>
         )}
 
         {currentTypography === 2 && (
           <div
-            className="fade-in"
             style={{
-              backgroundImage: `url(${Background})`,
+              backgroundImage: `url(${Background12})`,
               backgroundSize: "cover",
               height: "100vh",
               width: "100vw",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              transition: "opacity 2s ease",
               fontFamily: "Figtree",
+              fontWeight: "500",
             }}
           >
-            <div>
+            <Fader
+              onNextTypography={handleNextTypography}
+              intervalTime={70000000}
+            >
               <Container lg>
                 <Typography
                   variant="h4"
@@ -123,14 +126,13 @@ const PageFour = ({ userName, onProceed }) => {
                   feed, hoping to unwind after a long day.
                 </Typography>
               </Container>
-            </div>
+            </Fader>
           </div>
         )}
         {currentTypography === 3 && (
           <div
-            className="fade-in"
             style={{
-              backgroundImage: `url(${Background2})`,
+              backgroundImage: `url(${Background12})`,
               backgroundSize: "cover",
               height: "100vh",
               width: "100vw",
@@ -138,23 +140,28 @@ const PageFour = ({ userName, onProceed }) => {
               justifyContent: "center",
               alignItems: "center",
               fontFamily: "Figtree",
+              fontWeight: "500",
             }}
           >
             <div style={{ textAlign: "center" }}>
-              <Container maxWidth="lg">
-                {/* First block */}
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: "white",
-                    textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                    transition: "opacity 1s ease-in-out", // CSS transition for opacity change
-                  }}
-                >
-                  Suddenly, a post catches her eye—a familiar image with abusive
-                  comments that remind her of her past experiences.
-                </Typography>
-              </Container>
+              <Fader
+                onNextTypography={handleNextTypography}
+                intervalTime={70000000}
+              >
+                <Container maxWidth="lg">
+                  {/* First block */}
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      color: "white",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                    }}
+                  >
+                    Suddenly, a post catches her eye—a familiar image with
+                    abusive comments that remind her of her past experiences.
+                  </Typography>
+                </Container>
+              </Fader>
             </div>
           </div>
         )}
@@ -162,17 +169,16 @@ const PageFour = ({ userName, onProceed }) => {
         {currentTypography === 4 && (
           <div
             style={{
-              backgroundImage: `url(${Background2})`,
+              backgroundImage: `url(${Background12})`,
               backgroundSize: "cover",
               height: "100vh",
               width: "100vw",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              fontFamily: "Figtree",
             }}
           >
-            <Fader onNextTypography={handleNextTypography} intervalTime={5000}>
+            <Fader onNextTypography={handleNextTypography} intervalTime={4000}>
               <div className="fade-in" style={{ textAlign: "center" }}>
                 <Container maxWidth="md">
                   <Subtitle text={`${userName}: “No... not again.”`} />
@@ -186,7 +192,7 @@ const PageFour = ({ userName, onProceed }) => {
         {currentTypography === 5 && (
           <div
             style={{
-              backgroundImage: `url(${Background2})`,
+              backgroundImage: `url(${Background12})`,
               backgroundSize: "cover",
               height: "100vh",
               width: "100vw",
@@ -194,6 +200,7 @@ const PageFour = ({ userName, onProceed }) => {
               justifyContent: "center",
               alignItems: "center",
               fontFamily: "Figtree",
+              fontWeight: "500",
             }}
           >
             <div className="fade-in" style={{ textAlign: "center" }}>
@@ -234,6 +241,7 @@ const PageFour = ({ userName, onProceed }) => {
                 sx={{
                   color: "#ffee1a",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  fontFamily: "Figtree",
                   fontWeight: "bold",
                 }}
                 gutterBottom
@@ -243,8 +251,11 @@ const PageFour = ({ userName, onProceed }) => {
               <Typography
                 variant="h4"
                 sx={{
+                  mt: 5,
                   color: "white",
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  fontFamily: "Figtree",
+                  fontWeight: "500",
                 }}
                 gutterBottom
               >
@@ -357,6 +368,8 @@ const PageFour = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
                     >
                       With trembling fingers, she navigates through the process,
@@ -374,11 +387,26 @@ const PageFour = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
+                      gutterBottom
                     >
                       Addressing online harassment and victim-blaming may feel
-                      like a dauntingly large task. But culture change begins
-                      with<strong> small, positive actions.</strong>
+                      like a dauntingly large task.
+                    </Typography>
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        mt: 3,
+                        color: "white",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
+                      }}
+                    >
+                      But culture change begins with
+                      <strong> small, positive actions.</strong>
                     </Typography>
                   </Fader>
                 )}
@@ -392,6 +420,8 @@ const PageFour = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
                     >
                       For a long time, {userName} has been crippled by
@@ -411,12 +441,25 @@ const PageFour = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
                     >
                       One morning, {userName} wakes up feeling a sudden surge of
-                      courage coursing through her veins. With a newfound
-                      determination, she feels it is time to break the silence
-                      surrounding what she has endured.
+                      courage coursing through her veins.
+                    </Typography>
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        color: "white",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
+                        mt: 3
+                      }}
+                    >
+                      With a newfound determination, she feels it is time to
+                      break the silence surrounding what she has endured.
                     </Typography>
                   </Fader>
                 )}
@@ -468,12 +511,27 @@ const PageFour = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
+                        textWrap: "nowrap",
                       }}
+                      gutterBottom
                     >
                       {userName} closes the app, pushing aside the urge to
-                      report the abusive content. She tries to convince herself
-                      that ignoring it is best, but deep down, she knows the
-                      pain and fear still linger.
+                      report the abusive content.
+                    </Typography>
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        mt: 3,
+                        color: "white",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
+                      }}
+                    >
+                      She tries to convince herself that ignoring it is best,
+                      but deep down, she knows the pain and fear still linger.
                     </Typography>
                   </Fader>
                 )}
@@ -483,18 +541,32 @@ const PageFour = ({ userName, onProceed }) => {
               <Container maxWidth="lg">
                 <Fader
                   onNextTypography={handleNextTypography}
-                  intervalTime={10000}
+                  intervalTime={10000000000}
                 >
                   <Typography
                     variant="h4"
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
+                    gutterBottom
                   >
                     Despite {userName}'s attempts to brush off what she had
-                    seen, her anxiety intensifies in the days that follow. She
-                    finds herself avoiding social media altogether.
+                    seen, her anxiety intensifies in the days that follow.
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      mt: 4,
+                      color: "white",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
+                    }}
+                  >
+                    She finds herself avoiding social media altogether.
                   </Typography>
                 </Fader>
               </Container>
@@ -522,6 +594,8 @@ const PageFour = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
                       gutterBottom
                     >
@@ -530,7 +604,7 @@ const PageFour = ({ userName, onProceed }) => {
                     </Typography>
                     <Button
                       variant="outlined"
-                      sx={{ fontSize: "24px" }}
+                      sx={{ fontSize: "24px", mt: 3 }}
                       style={{
                         boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",

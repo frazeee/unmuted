@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Container, Grid, Link } from "@mui/material";
+import { Container, Grid, Button, Link } from "@mui/material";
 
 import "./titlePage.css";
 import "../Fonts/fonts.css";
@@ -57,7 +57,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                 style={{
                   position: "absolute",
                   top: "0",
-                  marginTop: "16px",
+                  marginTop: "100px",
                   fontFamily: "Figtree",
                   fontWeight: "400",
                 }}
@@ -105,6 +105,18 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                     Will you be the one to unmute it?
                   </Typography>
                 </Box>
+                <Button
+                  variant="outlined"
+                  sx={{ fontSize: "24px", px: 3, mx: "auto", display: "block" }}
+                  style={{
+                    boxShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                    textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                    fontFamily: "Figtree",
+                  }}
+                  onClick={handleNextTypography}
+                >
+                  START
+                </Button>
               </Grid>
             </>
           )}
@@ -113,7 +125,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
             <>
               <Fader
                 onNextTypography={handleNextTypography}
-                intervalTime={8000}
+                intervalTime={800000000}
               >
                 <Grid item lg={8}>
                   <Box sx={{ textAlign: "center" }}>
@@ -151,8 +163,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
-                      Remember, you can exit the journey anytime by clicking the
-                      'x' button.
+                      Remember, you can exit the journey anytime by closing the browser.
                     </Typography>
                   </Box>
                 </Grid>
@@ -160,20 +171,20 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
             </>
           )}
 
-          <Box
-            sx={{
-              position: "fixed",
-              bottom: "40px",
-              right: "40px",
-              padding: "10px",
-              cursor: "pointer",
-            }}
-            onClick={() => {
-              handleNextTypography();
-            }}
-          >
-            <Arrow />
-          </Box>
+          {![0].includes(currentTypography) && (
+            <Box
+              sx={{
+                position: "fixed",
+                bottom: "40px",
+                right: "40px",
+                padding: "10px",
+                cursor: "pointer",
+              }}
+              onClick={handleNextTypography}
+            >
+              <Arrow />
+            </Box>
+          )}
         </div>
       </Container>
     </div>

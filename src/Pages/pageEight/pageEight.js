@@ -58,7 +58,8 @@ const PageEight = ({ userName, onProceed }) => {
                 variant="h4"
                 sx={{
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                  
+                  fontFamily: "Figtree",
+                  fontWeight: "500"
                 }}
                 gutterBottom
               >
@@ -93,6 +94,8 @@ const PageEight = ({ userName, onProceed }) => {
                 variant="h4"
                 sx={{
                   textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  fontFamily: "Figtree",
+                  fontWeight: "500"
                 }}
                 gutterBottom
               >
