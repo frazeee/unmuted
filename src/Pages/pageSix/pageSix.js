@@ -9,7 +9,7 @@ import Background17 from "../../Backgrounds/17.png";
 import Background182A from "../../Backgrounds/18.2A.png";
 import Background182B from "../../Backgrounds/18.2B.png";
 import Background181A from "../../Backgrounds/18.1A.png";
-import Background181C from "../../Backgrounds/18.1C.mp4";
+import Background181C from "../../Backgrounds/18.1C.png";
 import Statistics5 from "../../Statistics/Statistics-Visualizers-05.png";
 
 import Avatar8 from "../../Audio/Avatar/AVATAR 8.mp3";
@@ -192,7 +192,7 @@ const PageSix = ({ userName, onProceed }) => {
                   intervalTime={6000}
                 >
                   <Subtitle
-                    text={`Hope:“I'm worried about you. You don't seem like yourself lately.”`}
+                    text={`Hope: “I'm worried about you. You don't seem like yourself lately.”`}
                   />
                   <audio src={Hope6} autoPlay loop={false} controls={false} />
                 </Fader>
@@ -302,7 +302,7 @@ const PageSix = ({ userName, onProceed }) => {
         <>
           <div
             style={{
-              backgroundImage: `url(${Background181A})`,
+              backgroundImage: currentTypography >= 4? `url(${Background181C})`: `url(${Background181A})`,
               backgroundSize: "cover",
               height: "100vh",
               width: "100vw",
@@ -369,28 +369,6 @@ const PageSix = ({ userName, onProceed }) => {
                 </Fader>
               )}
 
-              {currentTypography >= 4 && (
-                <>
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    style={{
-                      position: "absolute",
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      top: "50%",
-                      left: "50%",
-                      transform: " translate(-50%, -50%)",
-                      zIndex: 0,
-                    }}
-                  >
-                    <source src={Background181C} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </>
-              )}
               {currentTypography === 4 && (
                 <Fader
                   onNextTypography={handleNextTypography}

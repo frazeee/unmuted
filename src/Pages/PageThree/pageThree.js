@@ -283,6 +283,7 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
               <Box
                 onClick={() => {
                   handleNextTypography();
+                  onPlayPause();
                 }}
                 sx={{
                   display: "flex",

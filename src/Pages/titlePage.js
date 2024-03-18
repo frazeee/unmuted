@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Container, Grid, Button, Link } from "@mui/material";
+import { Container, Grid, Button, Link, Modal } from "@mui/material";
 
 import "./titlePage.css";
 import "../Fonts/fonts.css";
@@ -11,10 +11,41 @@ import Arrow from "../Components/Arrow.js";
 
 import backgroundVideo from "../Backgrounds/TitleVideo.mp4";
 import Fader from "../Components/Fader";
+import { blue } from "@mui/material/colors";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 const TitlePage = ({ onProceed, onPlayPause }) => {
   const [currentTypography, setCurrentTypography] = useState(0);
 
+  const [openAboutModal, setOpenAboutModal] = useState(false);
+  const [openReferencesModal, setOpenReferencesModal] = useState(false);
+
+  const handleOpenAbout = () => {
+    setOpenAboutModal(true);
+  };
+
+  const handleCloseAbout = () => {
+    setOpenAboutModal(false);
+  };
+
+  const handleOpenReferences = () => {
+    setOpenReferencesModal(true);
+  };
+
+  const handleCloseReferences = () => {
+    setOpenReferencesModal(false);
+  };
   const handleNextTypography = () => {
     setCurrentTypography((currentTypography) => currentTypography + 1);
     if (currentTypography + 1 === 2) {
@@ -62,10 +93,16 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                   fontWeight: "400",
                 }}
               >
-                <Link href="#" color="inherit">
+                <Link href="#" color="inherit" onClick={handleOpenAbout}>
                   About the Project
                 </Link>
-                <Link href="#" color="inherit" sx={{ marginLeft: 3 }}>
+
+                <Link
+                  href="#"
+                  color="inherit"
+                  sx={{ marginLeft: 3 }}
+                  onClick={handleOpenReferences}
+                >
                   References
                 </Link>
               </div>
@@ -163,13 +200,157 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       }}
                     >
-                      Remember, you can exit the journey anytime by closing the browser.
+                      Remember, you can exit the journey anytime by closing the
+                      browser.
                     </Typography>
                   </Box>
                 </Grid>
               </Fader>
             </>
           )}
+
+          <Modal
+            open={openAboutModal}
+            onClose={handleCloseAbout}
+            aria-labelledby="about-modal-title"
+            aria-describedby="about-modal-description"
+          >
+            <Box sx={style}>
+              <Typography
+                id="about-modal-title"
+                variant="h6"
+                component="h2"
+                style={{ fontFamily: "Figtree" }}
+              >
+                <b>About the project</b>
+              </Typography>
+              <Typography
+                id="about-modal-description"
+                sx={{ mt: 2 }}
+                style={{ fontFamily: "Figtree" }}
+              >
+                Unmuted is a thesis project that explores the profound
+                psychological impact of sexual harassment, with a particular
+                focus on its prevalence and effects within online environments.
+              </Typography>
+              <Typography sx={{ mt: 2 }} style={{ fontFamily: "Figtree" }}>
+                The creatives behind this project, Julia de Armas and Kayi
+                Tamsi, advocate against sexual harassment.
+              </Typography>
+
+              <Typography
+                variant="subtitle1"
+                sx={{ mt: 2 }}
+                style={{ fontFamily: "Figtree" }}
+              >
+                Team:
+              </Typography>
+              <ul>
+                <li>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ mt: 0.5 }}
+                    style={{ fontFamily: "Figtree" }}
+                  >
+                    <strong>Julia de Armas:</strong> Research and Scriptwriting,
+                    Cinematography
+                  </Typography>
+                </li>
+                <li>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ mt: 0.5 }}
+                    style={{ fontFamily: "Figtree" }}
+                  >
+                    <strong>Kayi Tamsi:</strong> Creative Direction, Audio and
+                    Visuals
+                  </Typography>
+                </li>
+                <li>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ mt: 0.5 }}
+                    style={{ fontFamily: "Figtree" }}
+                  >
+                    <strong>Kyle Uy:</strong> Web Consultant
+                  </Typography>
+                </li>
+              </ul>
+            </Box>
+          </Modal>
+
+          <Modal open={openReferencesModal} onClose={handleCloseReferences}>
+            <Box sx={style}>
+              <Typography id="about-modal-title" variant="h6" component="h2">
+                <b>References</b>
+              </Typography>
+
+              <Typography
+                sx={{ mt: 2 }}
+                style={{ fontFamily: "Figtree", fontWeight: "bold" }}
+              >
+                “About 73% of Filipinos are social media users.” Simon Kemp
+                (2023){" "}
+              </Typography>
+              <Link
+                variant="subtitle1"
+                sx={{ mt: 2 }}
+                href="https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20Mwas%20home%20to,percent%20of%20the%20total%20population."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Typography style={{ color: "blue", fontFamily: "Figtree" }}>
+                  https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20M
+                  <br />
+                  was%20home%20to,percent%20of%20the%
+                  <br />
+                  20total%20population.
+                </Typography>
+              </Link>
+              <Typography
+                sx={{ mt: 2 }}
+                style={{ fontFamily: "Figtree", fontWeight: "bold" }}
+              >
+                “Nearly 7 in 10 girls and young women in the Philippines have
+                experienced harassment on social media. These harassments happen
+                frequently.” Aly Narvaez (2020)
+              </Typography>
+              <Link
+                variant="subtitle1"
+                sx={{ mt: 2 }}
+                href="https://plan-international.org/philippines/news/2020/10/16/7-in-10-girls-and-young-women-in-ph-experience-online-harassment-plan-international-study/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Typography style={{ color: "blue", fontFamily: "Figtree" }}>
+                  https://plan-international.org/philippines/news/2020/10/16/7-in-10-girls-and-young-women-in-ph-experience-online-harassment-plan-international-study/
+                </Typography>
+              </Link>
+              <Typography
+                sx={{ mt: 2 }}
+                style={{ fontFamily: "Figtree", fontWeight: "bold" }}
+              >
+                “Those who have experienced the incident may feel ashamed and
+                may not want others to know what happened. They might avoid
+                seeking help or reporting their experience.”
+              </Typography>
+              <Link
+                variant="subtitle1"
+                sx={{ mt: 2 }}
+                href="https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20Mwas%20home%20to,percent%20of%20the%20total%20population."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Typography style={{ color: "blue", fontFamily: "Figtree" }}>
+                  https://datareportal.com/reports/digital-2023-philippines#:~:text=The%20Philippines%20M
+                  <br />
+                  was%20home%20to,percent%20of%20the%
+                  <br />
+                  20total%20population.
+                </Typography>
+              </Link>
+            </Box>
+          </Modal>
 
           {![0].includes(currentTypography) && (
             <Box

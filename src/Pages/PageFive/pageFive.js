@@ -199,7 +199,7 @@ const PageFive = ({ userName, onProceed }) => {
                         fontWeight: "500",
                       }}
                     >
-                      {userName} contemplating reaching out to her friend, Hope,
+                      {userName} contemplates reaching out to her friend, Hope,
                       but ultimately decides against it.
                     </Typography>
                   </Fader>
@@ -246,7 +246,7 @@ const PageFive = ({ userName, onProceed }) => {
                         fontWeight: "500",
                       }}
                     >
-                      She feels isolated and alone, unable to share her
+                      She feels isolated and alone, unable to share her <br/>
                       experiences with anyone.
                     </Typography>
                   </Fader>
@@ -403,7 +403,7 @@ const PageFive = ({ userName, onProceed }) => {
                     intervalTime={10000}
                   >
                     <Subtitle
-                      text={`“${userName}: Hey Hope, I... I've been keeping something from you. I've been struggling mentally, more than I've let on.”`}
+                      text={`${userName}: “Hey Hope, I... I've been keeping something from you. I've been struggling mentally, more than I've let on.”`}
                     />
                     <audio
                       src={Avatar5}
@@ -423,7 +423,7 @@ const PageFive = ({ userName, onProceed }) => {
                     intervalTime={10500}
                   >
                     <Subtitle
-                      text={`“${userName}:  It's... it's because of my past traumas. I don't know how to deal with it alone anymore.”`}
+                      text={`${userName}: “It's... it's because of my past traumas. I don't know how to deal with it alone anymore.”`}
                     />
                     <audio
                       src={Avatar6}
@@ -443,7 +443,7 @@ const PageFive = ({ userName, onProceed }) => {
                     intervalTime={7000}
                   >
                     <Subtitle
-                      text={`“Hope: I'm so sorry you've been going through this alone. But I'm here for you, always.”`}
+                      text={`Hope: “I'm so sorry you've been going through this alone. But I'm here for you, always.”`}
                     />
                     <audio src={Hope2} autoPlay loop={false} controls={false} />
                   </Fader>
@@ -458,7 +458,7 @@ const PageFive = ({ userName, onProceed }) => {
                     intervalTime={7000}
                   >
                     <Subtitle
-                      text={`“Hope:  You don't have to carry this burden by yourself. Let's figure out a way forward together.”`}
+                      text={`Hope: “You don't have to carry this burden by yourself. Let's figure out a way forward together.”`}
                     />
                     <audio src={Hope3} autoPlay loop={false} controls={false} />
                   </Fader>
@@ -473,7 +473,7 @@ const PageFive = ({ userName, onProceed }) => {
                     intervalTime={9000}
                   >
                     <Subtitle
-                      text={`“${userName}: Thanks, Hope. I just feel so lost. I don't know where to turn or what to do next.”`}
+                      text={`${userName}: “Thanks, Hope. I just feel so lost. I don't know where to turn or what to do next.”`}
                     />{" "}
                     <audio
                       src={Avatar7}
@@ -517,10 +517,11 @@ const PageFive = ({ userName, onProceed }) => {
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                         fontFamily: "Figtree",
                         fontWeight: "500",
-                        textWrap: "nowrap"
+                        textWrap: "nowrap",
                       }}
                     >
-                      {userName} begins to open up to Hope about the depth of her struggles.
+                      {userName} begins to open up to Hope about the depth of
+                      her struggles.
                     </Typography>
                     <Typography
                       variant="h4"
@@ -529,7 +530,7 @@ const PageFive = ({ userName, onProceed }) => {
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                         fontFamily: "Figtree",
-                        fontWeight: "500"
+                        fontWeight: "500",
                       }}
                     >
                       With Hope's support and understanding, Rachel feels a
@@ -547,7 +548,7 @@ const PageFive = ({ userName, onProceed }) => {
                     intervalTime={5000}
                   >
                     <Subtitle
-                      text={`“Hope: You're incredibly brave for opening up like this.”`}
+                      text={`Hope: “You're incredibly brave for opening up like this.”`}
                     />
                     <audio src={Hope4} autoPlay loop={false} controls={false} />
                   </Fader>
@@ -562,7 +563,7 @@ const PageFive = ({ userName, onProceed }) => {
                     intervalTime={9000}
                   >
                     <Subtitle
-                      text={`“Hope: And remember, seeking professional help is a positive step towards healing. You're not alone in this journey, ok?”`}
+                      text={`Hope: “And remember, seeking professional help is a positive step towards healing. You're not alone in this journey, ok?”`}
                     />{" "}
                     <audio src={Hope5} autoPlay loop={false} controls={false} />
                   </Fader>

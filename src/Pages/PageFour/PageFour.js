@@ -120,6 +120,8 @@ const PageFour = ({ userName, onProceed }) => {
                   sx={{
                     color: "white",
                     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                    fontFamily: "Figtree",
+                    fontWeight: "500",
                   }}
                 >
                   One afternoon, {userName} scrolls through her social media
@@ -155,6 +157,8 @@ const PageFour = ({ userName, onProceed }) => {
                     sx={{
                       color: "white",
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      fontFamily: "Figtree",
+                      fontWeight: "500",
                     }}
                   >
                     Suddenly, a post catches her eye—a familiar image with
@@ -210,6 +214,8 @@ const PageFour = ({ userName, onProceed }) => {
                   sx={{
                     color: "white",
                     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                    fontFamily: "Figtree",
+                    fontWeight: "500",
                   }}
                 >
                   The memories flood her mind, triggering intense feelings of
@@ -351,6 +357,8 @@ const PageFour = ({ userName, onProceed }) => {
                       sx={{
                         color: "white",
                         textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                        fontFamily: "Figtree",
+                        fontWeight: "500",
                       }}
                     >
                       {userName} decides to report the abusive content to the

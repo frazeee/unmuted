@@ -624,7 +624,7 @@ const PageSeven = ({ userName, onProceed }) => {
                   intervalTime={8000}
                 >
                   <Subtitle
-                    text={`Dr Faith: “You're making significant progress, ${userName}. I'm proud of how far you've come.”
+                    text={`Dr Faith: “You're making significant progress, I'm proud of how far you've come.”
                   `}
                   />
                   <audio src={Faith4} autoPlay loop={false} controls={false} />
