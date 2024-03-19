@@ -133,8 +133,8 @@ const PageFive = ({ userName, onProceed }) => {
                 }}
                 onClick={() => handleChoice("Keep")}
               >
-                “Keep it to yourself. <br /> Your life will be peaceful that
-                way.”
+                Keep it to yourself. <br /> Your life will be peaceful that
+                way.
               </Button>
             </Grid>
             <Grid item md={12} lg={6}>
@@ -154,8 +154,8 @@ const PageFive = ({ userName, onProceed }) => {
                 }}
                 onClick={() => handleChoice("Tell")}
               >
-                “You don't have to go through this alone.
-                <br /> It’s time to tell someone.”
+                You don't have to go through this alone.
+                <br /> It’s time to tell someone.
               </Button>
             </Grid>
           </Grid>
