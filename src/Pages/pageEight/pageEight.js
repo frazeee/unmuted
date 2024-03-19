@@ -211,8 +211,9 @@ const PageEight = ({ userName, onProceed }) => {
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                       width: "100%",
+                      height: "31%"
                     }}
-                    sx={{ fontSize: "20px", mb: 6 }}
+                    sx={{ fontSize: "20px", mb: 2 }}
                     onClick={() =>
                       window.open("https://cybercrime.doj.gov.ph", "_blank")
                     }
@@ -308,8 +309,9 @@ const PageEight = ({ userName, onProceed }) => {
                       textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                       fontFamily: "Figtree",
                       width: "100%",
+                      height: "31%"
                     }}
-                    sx={{ fontSize: "20px", mb: 6 }}
+                    sx={{ fontSize: "20px", mb: 2,  }}
                     onClick={() =>
                       window.open("https://www.fullypsych.com/", "_blank")
                     }

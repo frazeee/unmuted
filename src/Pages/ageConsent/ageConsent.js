@@ -39,11 +39,13 @@ const AgeConsent = ({ onProceed }) => {
                 color="primary"
                 onClick={onProceed}
                 sx={{
-                  fontSize: "24px",
+                  fontSize: "22px",
                   marginTop: "10px",
                   backgroundColor: "black",
                   color: "white",
-                  fontFamily:"Figtree"
+                  fontFamily:"Figtree",
+                  textAlign: "center",  
+                  px: 2
                 }}
               >
                 I am 18+

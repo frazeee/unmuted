@@ -11,7 +11,7 @@ import Arrow from "../Components/Arrow.js";
 
 import backgroundVideo from "../Backgrounds/TitleVideo.mp4";
 import Fader from "../Components/Fader";
-import { blue } from "@mui/material/colors";
+
 
 const style = {
   position: "absolute",
@@ -224,7 +224,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                 component="h2"
                 style={{ fontFamily: "Figtree" }}
               >
-                <b>About the project</b>
+                <b>About the Project</b>
               </Typography>
               <Typography
                 id="about-modal-description"
@@ -273,8 +273,8 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
 
           <Modal open={openReferencesModal} onClose={handleCloseReferences}>
             <Box sx={style}>
-              <Typography id="about-modal-title" variant="h6" component="h2">
-                <b>References</b>
+              <Typography id="about-modal-title" variant="h6" component="h2" sx={{fontWeight: "800"}}>
+                References
               </Typography>
 
               <Typography style={{ color: "black", fontFamily: "Figtree" }}>

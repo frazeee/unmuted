@@ -206,7 +206,7 @@ const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
           {currentTypography === 4 && (
             <Fader
               onNextTypography={handleNextTypography}
-              intervalTime={4000}
+              intervalTime={7000}
             >
               <div
                 className="typewriter-container"

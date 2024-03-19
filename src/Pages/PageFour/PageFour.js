@@ -63,7 +63,7 @@ const PageFour = ({ userName, onProceed }) => {
         }}
       >
         {currentTypography === 0 && (
-          <Fader onNextTypography={handleNextTypography} intervalTime={4000}>
+          <Fader onNextTypography={handleNextTypography} intervalTime={7000}>
             <div
               className="typewriter-container"
               style={{
@@ -304,7 +304,7 @@ const PageFour = ({ userName, onProceed }) => {
                 }}
                 gutterBottom
               >
-                Imagine you're {userName}
+                Imagine you're {userName}.
               </Typography>
               <Typography
                 variant="h4"
@@ -356,7 +356,7 @@ const PageFour = ({ userName, onProceed }) => {
           </div>
         )}
         {currentTypography === 7 && (
-          <Fader onNextTypography={handleNextTypography} intervalTime={4000}>
+          <Fader onNextTypography={handleNextTypography} intervalTime={7000}>
             <div
               className="typewriter-container"
               style={{

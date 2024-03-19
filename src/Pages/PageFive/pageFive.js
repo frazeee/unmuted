@@ -5,9 +5,7 @@ import {
   Button,
   Box,
   Grid,
-  Snackbar,
   Container,
-  Alert,
 } from "@mui/material";
 
 import "./styles.css";
@@ -165,7 +163,7 @@ const PageFive = ({ userName, onProceed }) => {
       )}
 
       {currentTypography === 1 && (
-        <Fader onNextTypography={handleNextTypography} intervalTime={5000}>
+        <Fader onNextTypography={handleNextTypography} intervalTime={7000}>
           <div
             className="typewriter-container"
             style={{

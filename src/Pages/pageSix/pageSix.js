@@ -143,7 +143,7 @@ const PageSix = ({ userName, onProceed }) => {
       )}
 
       {currentTypography === 1 && (
-        <Fader onNextTypography={handleNextTypography} intervalTime={4000}>
+        <Fader onNextTypography={handleNextTypography} intervalTime={7000}>
           <div
             className="typewriter-container"
             style={{
@@ -163,7 +163,7 @@ const PageSix = ({ userName, onProceed }) => {
                   fontWeight: "900",
                   color: "white",
                   mx: "auto",
-                  py: 0.5
+                  py: 0.5,
                 }}
               >
                 FACT
@@ -179,9 +179,10 @@ const PageSix = ({ userName, onProceed }) => {
                 }}
               >
                 Those who have experienced the incident may feel{" "}
-                <span style={{ fontWeight: "800" }}>ashamed</span> and may
-                not want others to know what happened. They might
-                <span style={{ fontWeight: "800" }}> {" "}
+                <span style={{ fontWeight: "800" }}>ashamed</span> and may not
+                want others to know what happened. They might
+                <span style={{ fontWeight: "800" }}>
+                  {" "}
                   avoid seeking help
                 </span>{" "}
                 or reporting their experience.
@@ -389,20 +390,8 @@ const PageSix = ({ userName, onProceed }) => {
                     gutterBottom
                   >
                     {userName} sits nervously in online therapy and opens up
-                    about her struggles.
-                  </Typography>
-
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      color: "white",
-                      textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                      fontFamily: "Figtree",
-                      fontWeight: "500",
-                    }}
-                  >
-                    The therapist, Dr. Faith, listens attentively as {userName}{" "}
-                    shares her experiences.
+                    about her struggles. <br /> The therapist, Dr. Faith,
+                    listens attentively as {userName} shares her experiences.
                   </Typography>
                 </Fader>
               )}
@@ -464,7 +453,7 @@ const PageSix = ({ userName, onProceed }) => {
         </>
       )}
 
-      {![0 , 1].includes(currentTypography) &&
+      {![0, 1].includes(currentTypography) &&
         !(
           (userChoice === "Convince" &&
             [3, 4, 5, 7, 8].includes(currentTypography)) ||
