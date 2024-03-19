@@ -273,7 +273,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
 
           <Modal open={openReferencesModal} onClose={handleCloseReferences}>
             <Box sx={style}>
-              <Typography id="about-modal-title" variant="h6" component="h2" sx={{fontWeight: "800"}}>
+              <Typography id="about-modal-title" variant="h6" component="h2" sx={{fontFamily:"Figtree",fontWeight: "800"}}>
                 References
               </Typography>
 

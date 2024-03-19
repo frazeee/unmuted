@@ -594,7 +594,7 @@ const PageFive = ({ userName, onProceed }) => {
                         fontWeight: "500",
                       }}
                     >
-                      With Hope's support and understanding, Rachel feels a
+                      With Hope's support and understanding, {userName} feels a
                       weight lifting off her shoulders.
                     </Typography>
                   </Fader>
