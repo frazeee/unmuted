@@ -20,7 +20,7 @@ import WhiteGrunge from "../../Backgrounds/WhiteGrunge.png";
 import Fader from "../../Components/Fader";
 
 const PageThree = ({ onProceed, userName, handleChangeName, onPlayPause }) => {
-  const [currentTypography, setCurrentTypography] = useState(4);
+  const [currentTypography, setCurrentTypography] = useState(0);
 
   const [name, setName] = useState("Rachel");
 
