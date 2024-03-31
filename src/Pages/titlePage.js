@@ -12,7 +12,6 @@ import Arrow from "../Components/Arrow.js";
 import backgroundVideo from "../Backgrounds/TitleVideo.mp4";
 import Fader from "../Components/Fader";
 
-
 const style = {
   position: "absolute",
   top: "50%",
@@ -273,7 +272,12 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
 
           <Modal open={openReferencesModal} onClose={handleCloseReferences}>
             <Box sx={style}>
-              <Typography id="about-modal-title" variant="h6" component="h2" sx={{fontFamily:"Figtree",fontWeight: "800"}}>
+              <Typography
+                id="about-modal-title"
+                variant="h6"
+                component="h2"
+                sx={{ fontFamily: "Figtree", fontWeight: "800" }}
+              >
                 References
               </Typography>
 
@@ -291,10 +295,14 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                     rel="noopener noreferrer"
                   >
                     <Typography
-                      style={{ color: "black", fontFamily: "Figtree", fontWeight: "bold" }}
+                      style={{
+                        color: "black",
+                        fontFamily: "Figtree",
+                        fontWeight: "bold",
+                      }}
                     >
-                      “About 73% of Filipinos are social media users.” Simon
-                      Kemp (2023)
+                      “About 73% of Filipinos are social media users.” (Kemp,
+                      2023)
                     </Typography>
                   </Link>
                 </li>
@@ -306,12 +314,16 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                     rel="noopener noreferrer"
                   >
                     <Typography
-                      style={{ color: "black", fontFamily: "Figtree", fontWeight: "bold" }}
+                      style={{
+                        color: "black",
+                        fontFamily: "Figtree",
+                        fontWeight: "bold",
+                      }}
                       sx={{ mt: 2 }}
                     >
                       “Nearly 7 in 10 girls and young women in the Philippines
                       have experienced harassment on social media. These
-                      harassments happen frequently.” Aly Narvaez (2020)
+                      harassments happen frequently.” (Narvaez, 2020)
                     </Typography>
                   </Link>
                 </li>
@@ -323,12 +335,17 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                     rel="noopener noreferrer"
                   >
                     <Typography
-                      style={{ color: "black", fontFamily: "Figtree", fontWeight: "bold" }}
+                      style={{
+                        color: "black",
+                        fontFamily: "Figtree",
+                        fontWeight: "bold",
+                      }}
                       sx={{ mt: 2 }}
                     >
                       “Those who have experienced the incident may feel ashamed
                       and may not want others to know what happened. They might
                       avoid seeking help or reporting their experience.”
+                      (Eichelsheim et al., 2023)
                     </Typography>
                   </Link>
                 </li>
@@ -340,11 +357,15 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
                     rel="noopener noreferrer"
                   >
                     <Typography
-                      style={{ color: "black", fontFamily: "Figtree", fontWeight: "bold" }}
+                      style={{
+                        color: "black",
+                        fontFamily: "Figtree",
+                        fontWeight: "bold",
+                      }}
                       sx={{ mt: 2 }}
                     >
                       “Research proves that ignoring harassment doesn't stop
-                      it.” (2017)
+                      it.” (Duggan, 2017)
                     </Typography>
                   </Link>
                 </li>
@@ -352,7 +373,7 @@ const TitlePage = ({ onProceed, onPlayPause }) => {
 
               <Typography
                 sx={{ mt: 2 }}
-                style={{ color: "black", fontFamily: "Figtree", }}
+                style={{ color: "black", fontFamily: "Figtree" }}
               >
                 We would also like to acknowledge the students, teachers, and
                 mental health experts who contributed to our ideation and
